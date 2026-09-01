@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <!-- ═══════════════════════════════════════════════
+         APEX — Custom classes + test classes
+         PHP_OTPService, PHP_SmartRentService + test classes
+    ════════════════════════════════════════════════════ -->
+    <types>
+        <members>*</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTestSuite</name>
+    </types>
+
+    <!-- ═══════════════════════════════════════════════
+         DATA MODEL — All custom objects + standard object
+         field extensions (Account Person Account fields,
+         MessagingSession OTP fields)
+    ════════════════════════════════════════════════════ -->
+    <types>
+        <members>*</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Account</members>
+        <members>Case</members>
+        <members>Lead</members>
+        <members>MessagingSession</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomMetadata</name>
+    </types>
+
+    <!-- ═══════════════════════════════════════════════
+         FLOWS — All 11 autolaunched + routing flows
+         PHP_SearchApartments_Flow
+         PHP_GetMoveInSpecials_Flow
+         PHP_CreateLead_Flow
+         PHP_VerifyActiveTenant_Flow
+         PHP_CreateMaintenanceCase_Flow
+         PHP_CheckMaintenanceHistory_Flow
+         PHP_GetTenantRentalHistory_Flow
+         PHP_WeeklyPropertyReview_Flow
+         PHP_Escalation_Flow
+         PHP_Inbound_GuestRouting_Flow
+         PHP_Inbound_AuthRouting_Flow
+    ════════════════════════════════════════════════════ -->
+    <types>
+        <members>*</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>FlowDefinition</name>
+    </types>
+
+    <!-- ═══════════════════════════════════════════════
+         AGENTFORCE — Agent metadata (Winter '26 / v65.0+)
+         Bot          : top-level agent record
+         BotVersion   : versioned agent snapshot (rollback target)
+         AiAuthoringBundle : Agent Script (new builder)
+         GenAiPlannerBundle: reasoning engine + subagent/action map
+         GenAiPlugin  : subagent definitions (Asset Library)
+         GenAiFunction: action definitions (Asset Library)
+         GenAiPromptTemplate: PHP_RenewalEmail_PromptTemplate
+    ════════════════════════════════════════════════════ -->
+    <types>
+        <members>*</members>
+        <name>Bot</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>BotVersion</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>AiAuthoringBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>GenAiPlannerBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>GenAiPlugin</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>GenAiFunction</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>GenAiPromptTemplate</name>
+    </types>
+
+    <!-- ═══════════════════════════════════════════════
+         SECURITY — Permission Sets + Profiles
+         PHP_LeasingAgent_PS
+         PHP_TenantConcierge_PS
+         PHP_OpsAgent_PS
+         Note: retrieve CustomObject + CustomField alongside
+         PermissionSet so FLS entries are included
+    ════════════════════════════════════════════════════ -->
+    <types>
+        <members>*</members>
+        <name>PermissionSet</name>
+    </types>
+
+    <!-- ═══════════════════════════════════════════════
+         INTEGRATION — Named Credentials + External Credentials
+         PHP_SmartRent_NC (URL + auth structure only —
+         auth tokens are NOT replicated and must be
+         manually re-entered in each target env)
+    ════════════════════════════════════════════════════ -->
+    <types>
+        <members>*</members>
+        <name>NamedCredential</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ExternalCredential</name>
+    </types>
+
+    <!-- ═══════════════════════════════════════════════
+         MESSAGING + OMNI-CHANNEL
+         PHP_Guest_Chat (Enhanced Chat, guest)
+         PHP_Auth_Chat (Enhanced Chat, authenticated)
+         Omni-Channel routing configurations + queues
+    ════════════════════════════════════════════════════ -->
+    <types>
+        <members>*</members>
+        <name>MessagingChannel</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ServiceChannel</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Queue</name>
+    </types>
+    <!--
+    <types>
+        <members>*</members>
+        <name>RoutingConfiguration</name>
+    </types>
+-->
+    <!-- ═══════════════════════════════════════════════
+         EXPERIENCE CLOUD
+         Public site (Leasing) + Auth portal (Tenant)
+    ════════════════════════════════════════════════════ -->
+    <types>
+        <members>*</members>
+        <name>Network</name>
+    </types>
+
+    <!-- ═══════════════════════════════════════════════
+         LAYOUTS + RECORD TYPES
+         Person Account layout (External_Account__c)
+         Apartment__c, Lease_Payment__c layouts
+    ════════════════════════════════════════════════════ -->
+    <types>
+        <members>*</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>RecordType</name>
+    </types>
+
+    <!-- ═══════════════════════════════════════════════
+         LWC / AURA / VISUALFORCE — retained from original
+         (none expected for PHP but included for completeness)
+    ════════════════════════════════════════════════════ -->
+    <types>
+        <members>*</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexComponent</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+
+    <!-- ═══════════════════════════════════════════════
+         API VERSION — must be 65.0+ for GenAiPlannerBundle
+         (Winter '26 orgs). Do NOT downgrade to 64.0.
+    ════════════════════════════════════════════════════ -->
+    <version>65.0</version>
+
+</Package>
