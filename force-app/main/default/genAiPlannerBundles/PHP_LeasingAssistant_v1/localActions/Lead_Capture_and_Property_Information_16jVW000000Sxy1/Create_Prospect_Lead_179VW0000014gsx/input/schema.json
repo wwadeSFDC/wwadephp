@@ -1,0 +1,49 @@
+{
+  "required" : [ "inputBedrooms", "inputEmail", "inputFirstName", "inputLastName", "inputMaxRent", "inputPhone" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputBedrooms" : {
+      "title" : "inputBedrooms",
+      "description" : "Number of bedrooms the prospect is looking for.",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputEmail" : {
+      "title" : "inputEmail",
+      "description" : "Prospect's email address.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputFirstName" : {
+      "title" : "inputFirstName",
+      "description" : "Prospect's first name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputLastName" : {
+      "title" : "inputLastName",
+      "description" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputMaxRent" : {
+      "title" : "inputMaxRent",
+      "description" : "Prospect's last name.",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputPhone" : {
+      "title" : "inputPhone",
+      "description" : "Prospect's phone number.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

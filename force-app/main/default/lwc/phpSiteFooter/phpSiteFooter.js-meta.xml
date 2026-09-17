@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>PHP Site Footer</masterLabel>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="tagline" type="String" label="Tagline" default="Premium Living Across California, Oregon &amp; Washington"/>
+            <property name="serviceAreaText" type="String" label="Service Area Text" default="Serving 50+ communities across the West Coast"/>
+            <property name="copyrightText" type="String" label="Copyright Text" default="© 2026 Pacific Haven Properties. All Rights Reserved."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,90 @@
+<template>
+    <div class="php-gallery">
+        <h2 if:true={effectiveHeading} class="php-gallery__heading">{effectiveHeading}</h2>
+
+        <template if:true={showFilters}>
+            <div class="php-filter-bar">
+                <lightning-combobox
+                    label="State"
+                    value={pendingState}
+                    options={stateOptions}
+                    onchange={handleStateChange}
+                    class="php-filter-bar__field"
+                ></lightning-combobox>
+                <lightning-combobox
+                    label="Bedrooms"
+                    value={pendingBedrooms}
+                    options={bedroomOptions}
+                    onchange={handleBedroomsChange}
+                    class="php-filter-bar__field"
+                ></lightning-combobox>
+                <lightning-input
+                    type="number"
+                    label="Max Monthly Rent ($)"
+                    value={pendingMaxRent}
+                    onchange={handleMaxRentChange}
+                    class="php-filter-bar__field"
+                ></lightning-input>
+                <button class="php-filter-bar__search" onclick={handleSearch}>Search</button>
+            </div>
+        </template>
+
+        <template if:true={isLoading}>
+            <div class="php-gallery__spinner">
+                <lightning-spinner alternative-text="Loading apartments" size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:true={showEmptyState}>
+            <div class="php-empty-state">
+                <p>No apartments match your search. Try adjusting your filters or chat with our leasing team.</p>
+                <button class="php-empty-state__cta" onclick={handleOpenChat}>Chat with a Leasing Agent</button>
+            </div>
+        </template>
+
+        <template if:true={hasResults}>
+            <div class={gridClass}>
+                <template for:each={apartments} for:item="apt">
+                    <div class="php-card" key={apt.id}>
+                        <div class="php-card__photo">
+                            <lightning-icon icon-name="utility:home" size="large" variant="inverse"></lightning-icon>
+                        </div>
+                        <div class="php-card__body">
+                            <h3 class="php-card__name">{apt.name}</h3>
+                            <p class="php-card__location">{apt.locationLabel}</p>
+                            <span class="php-card__pill">{apt.bedroomLabel}</span>
+                            <p class="php-card__rent">{apt.formattedRent}<span class="php-card__rent-suffix">/mo</span></p>
+                            <p if:true={apt.formattedDeposit} class="php-card__deposit">Security deposit: {apt.formattedDeposit}</p>
+                            <p class="php-card__available">Available {apt.formattedDate}</p>
+                            <button class="php-card__cta" data-id={apt.id} onclick={handleLearnMore}>Learn More</button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+
+    <template if:true={selectedApartment}>
+        <section class="php-modal" role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="php-modal-heading">
+            <div class="php-modal__backdrop" onclick={handleCloseModal}></div>
+            <div class="php-modal__content">
+                <button class="php-modal__close" onclick={handleCloseModal} aria-label="Close">&times;</button>
+                <h3 id="php-modal-heading" class="php-modal__title">{selectedApartment.name}</h3>
+                <p class="php-modal__location">{selectedApartment.locationLabel}</p>
+                <dl class="php-modal__details">
+                    <dt>Bedrooms</dt>
+                    <dd>{selectedApartment.bedroomLabel}</dd>
+                    <dt>Monthly Rent</dt>
+                    <dd>{selectedApartment.formattedRent}</dd>
+                    <dt>Security Deposit</dt>
+                    <dd>{selectedApartment.formattedDeposit}</dd>
+                    <dt>Square Footage</dt>
+                    <dd>{selectedApartment.squareFootage} sq ft</dd>
+                    <dt>Available</dt>
+                    <dd>{selectedApartment.formattedDate}</dd>
+                </dl>
+                <button class="php-modal__cta" onclick={handleOpenChat}>Chat with a Leasing Agent</button>
+            </div>
+        </section>
+    </template>
+</template>

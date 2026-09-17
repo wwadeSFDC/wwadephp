@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Public-facing leasing assistant for Pacific Haven Properties. Helps prospective residents search available apartments, get property information, and capture their contact details for follow-up.</description>
+    <genAiPlugins>
+        <genAiPluginName>PHP_LeasingAssistant_Topic_ApartmentSearch</genAiPluginName>
+    </genAiPlugins>
+    <genAiPlugins>
+        <genAiPluginName>PHP_LeasingAssistant_Topic_LeadCapture</genAiPluginName>
+    </genAiPlugins>
+    <masterLabel>PHP Leasing Assistant</masterLabel>
+    <plannerType>AiCopilot__ReAct</plannerType>
+</GenAiPlannerBundle>

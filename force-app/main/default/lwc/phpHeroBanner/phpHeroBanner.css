@@ -1,0 +1,82 @@
+:host {
+    --php-primary: #1b3a5c;
+    --php-gold: #c9a84c;
+    display: block;
+}
+
+.php-hero {
+    background: linear-gradient(135deg, #1b3a5c 0%, #24507d 100%);
+    padding: 5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.php-hero__content {
+    max-width: 720px;
+}
+
+.php-hero__headline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 2.75rem;
+    margin: 0 0 1rem 0;
+}
+
+.php-hero__subheadline {
+    font-family: 'Open Sans', sans-serif;
+    color: #e6e9ed;
+    font-size: 1.2rem;
+    margin: 0 0 2rem 0;
+}
+
+.php-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.php-hero__btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-radius: 6px;
+    padding: 0.85rem 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid transparent;
+}
+
+.php-hero__btn_primary {
+    background: var(--php-gold);
+    color: var(--php-primary);
+}
+
+.php-hero__btn_primary:hover {
+    background: #b8963e;
+}
+
+.php-hero__btn_secondary {
+    background: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.php-hero__btn_secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 640px) {
+    .php-hero {
+        padding: 3rem 1rem;
+    }
+
+    .php-hero__headline {
+        font-size: 2rem;
+    }
+}

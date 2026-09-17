@@ -1,0 +1,35 @@
+{
+  "required" : [ "inputAccountId", "inputDescription" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputAccountId" : {
+      "title" : "inputAccountId",
+      "description" : "inputAccountId",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputDescription" : {
+      "title" : "inputDescription",
+      "description" : "inputDescription",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputPriority" : {
+      "title" : "inputPriority",
+      "description" : "inputPriority",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputSubject" : {
+      "title" : "inputSubject",
+      "description" : "inputSubject",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

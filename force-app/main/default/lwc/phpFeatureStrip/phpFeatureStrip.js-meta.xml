@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>PHP Feature Strip</masterLabel>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="icon1" type="String" label="Feature 1 Icon (emoji)" default="🏠"/>
+            <property name="title1" type="String" label="Feature 1 Title" default="50+ Premium Properties"/>
+            <property name="text1" type="String" label="Feature 1 Text" default="Locations across CA, OR &amp; WA"/>
+            <property name="icon2" type="String" label="Feature 2 Icon (emoji)" default="⭐"/>
+            <property name="title2" type="String" label="Feature 2 Title" default="Tenant First Philosophy"/>
+            <property name="text2" type="String" label="Feature 2 Text" default="We put residents at the center of everything"/>
+            <property name="icon3" type="String" label="Feature 3 Icon (emoji)" default="🔧"/>
+            <property name="title3" type="String" label="Feature 3 Title" default="24/7 Maintenance Support"/>
+            <property name="text3" type="String" label="Feature 3 Text" default="Fast, reliable response when you need it"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

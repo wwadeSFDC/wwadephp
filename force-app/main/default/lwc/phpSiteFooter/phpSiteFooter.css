@@ -1,0 +1,78 @@
+:host {
+    display: block;
+}
+
+.php-footer {
+    background: #0d1f33;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.php-footer__columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 3rem 1.5rem 2rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .php-footer__columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+.php-footer__brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+}
+
+.php-footer__tagline,
+.php-footer__service-area {
+    color: #cfd6de;
+    margin: 0;
+}
+
+.php-footer__heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #c9a84c;
+    font-size: 0.9rem;
+    margin: 0 0 0.75rem 0;
+}
+
+.php-footer__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.php-footer__links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.php-footer__links a:hover {
+    color: #c9a84c;
+    text-decoration: underline;
+}
+
+.php-footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+    padding: 1.25rem 1.5rem;
+    font-size: 0.85rem;
+    color: #9aa5b1;
+}
+
+.php-footer__bottom p {
+    margin: 0;
+}

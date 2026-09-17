@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>z8zhhSMY7Sthkkhx9KKFMZ4095j82YtpfK28Gzg2EJ8=_2</activeVersionIdentifier>
     <developerName>AccountDescriptionFieldGen_PT</developerName>
     <masterLabel>AccountDescriptionFieldGen PT</masterLabel>
     <relatedEntity>Account</relatedEntity>

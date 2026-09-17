@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-
     <!-- ═══════════════════════════════════════════════
          APEX — Custom classes + test classes
          PHP_OTPService, PHP_SmartRentService + test classes
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════ 
     <types>
         <members>*</members>
         <name>ApexClass</name>
@@ -16,13 +15,13 @@
     <types>
         <members>*</members>
         <name>ApexTestSuite</name>
-    </types>
+    </types>-->
 
     <!-- ═══════════════════════════════════════════════
          DATA MODEL — All custom objects + standard object
          field extensions (Account Person Account fields,
          MessagingSession OTP fields)
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════ 
     <types>
         <members>*</members>
         <name>CustomObject</name>
@@ -45,7 +44,7 @@
     <types>
         <members>*</members>
         <name>CustomMetadata</name>
-    </types>
+    </types>-->
 
     <!-- ═══════════════════════════════════════════════
          FLOWS — All 11 autolaunched + routing flows
@@ -60,7 +59,7 @@
          PHP_Escalation_Flow
          PHP_Inbound_GuestRouting_Flow
          PHP_Inbound_AuthRouting_Flow
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════ 
     <types>
         <members>*</members>
         <name>Flow</name>
@@ -68,7 +67,7 @@
     <types>
         <members>*</members>
         <name>FlowDefinition</name>
-    </types>
+    </types>-->
 
     <!-- ═══════════════════════════════════════════════
          AGENTFORCE — Agent metadata (Winter '26 / v65.0+)
@@ -79,7 +78,7 @@
          GenAiPlugin  : subagent definitions (Asset Library)
          GenAiFunction: action definitions (Asset Library)
          GenAiPromptTemplate: PHP_RenewalEmail_PromptTemplate
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════ 
     <types>
         <members>*</members>
         <name>Bot</name>
@@ -107,7 +106,7 @@
     <types>
         <members>*</members>
         <name>GenAiPromptTemplate</name>
-    </types>
+    </types>-->
 
     <!-- ═══════════════════════════════════════════════
          SECURITY — Permission Sets + Profiles
@@ -116,18 +115,18 @@
          PHP_OpsAgent_PS
          Note: retrieve CustomObject + CustomField alongside
          PermissionSet so FLS entries are included
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════ 
     <types>
         <members>*</members>
         <name>PermissionSet</name>
-    </types>
+    </types>-->
 
     <!-- ═══════════════════════════════════════════════
          INTEGRATION — Named Credentials + External Credentials
          PHP_SmartRent_NC (URL + auth structure only —
          auth tokens are NOT replicated and must be
          manually re-entered in each target env)
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════ 
     <types>
         <members>*</members>
         <name>NamedCredential</name>
@@ -135,14 +134,14 @@
     <types>
         <members>*</members>
         <name>ExternalCredential</name>
-    </types>
+    </types>-->
 
     <!-- ═══════════════════════════════════════════════
          MESSAGING + OMNI-CHANNEL
          PHP_Guest_Chat (Enhanced Chat, guest)
          PHP_Auth_Chat (Enhanced Chat, authenticated)
          Omni-Channel routing configurations + queues
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════ 
     <types>
         <members>*</members>
         <name>MessagingChannel</name>
@@ -155,26 +154,32 @@
         <members>*</members>
         <name>Queue</name>
     </types>
-    <!--
     <types>
         <members>*</members>
-        <name>RoutingConfiguration</name>
-    </types>
--->
+        <name>QueueRoutingConfig</name>
+    </types>-->
     <!-- ═══════════════════════════════════════════════
          EXPERIENCE CLOUD
          Public site (Leasing) + Auth portal (Tenant)
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════ --> -->
+    <types>
+        <members>*</members>
+        <name>ExperienceBundle</name>
+    </types>
     <types>
         <members>*</members>
         <name>Network</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomSite</name>
     </types>
 
     <!-- ═══════════════════════════════════════════════
          LAYOUTS + RECORD TYPES
          Person Account layout (External_Account__c)
          Apartment__c, Lease_Payment__c layouts
-    ════════════════════════════════════════════════════ -->
+    ════════════════════════════════════════════════════ 
     <types>
         <members>*</members>
         <name>Layout</name>
@@ -182,13 +187,12 @@
     <types>
         <members>*</members>
         <name>RecordType</name>
-    </types>
+    </types>-->
 
     <!-- ═══════════════════════════════════════════════
          LWC / AURA / VISUALFORCE — retained from original
          (none expected for PHP but included for completeness)
-    ════════════════════════════════════════════════════ -->
-    <types>
+    ════════════════════════════════════════════════════ 
         <members>*</members>
         <name>LightningComponentBundle</name>
     </types>
@@ -207,12 +211,10 @@
     <types>
         <members>*</members>
         <name>StaticResource</name>
-    </types>
-
+    </types>-->
     <!-- ═══════════════════════════════════════════════
          API VERSION — must be 65.0+ for GenAiPlannerBundle
          (Winter '26 orgs). Do NOT downgrade to 64.0.
     ════════════════════════════════════════════════════ -->
     <version>65.0</version>
-
 </Package>

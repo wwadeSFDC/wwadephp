@@ -1,0 +1,50 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sf project *)",
+      "Bash(rm -f /tmp/deploy_result.json)",
+      "Bash(sf sobject *)",
+      "Bash(node -e ' *)",
+      "Bash(sf data *)",
+      "WebFetch(domain:developer.salesforce.com)",
+      "mcp__plugin_codesearch_codesearch__search",
+      "mcp__mcp-adaptor__doc_search",
+      "Bash(echo \"exit:$?\")",
+      "Bash(\"/c/Program Files/sf/bin/sf\" data query -q \"SELECT Id, Name, Status FROM Network\" -o phpProd --json)",
+      "Bash(node -e \"for \\(let i=0;i<20;i++\\) console.log\\(require\\('crypto'\\).randomUUID\\(\\)\\)\")",
+      "Bash(node -e \"for \\(let i=0;i<12;i++\\) console.log\\(require\\('crypto'\\).randomUUID\\(\\)\\)\")",
+      "Bash(node -e \"const d=JSON.parse\\(require\\('fs'\\).readFileSync\\('deploy_dryrun2.json','utf8'\\)\\); console.log\\('status',d.status,'success',d.result&&d.result.success,'numErrors',d.result&&d.result.numberComponentErrors,'done',d.result&&d.result.done\\); const failed=\\(d.result.files||[]\\).filter\\(f=>f.state==='Failed'\\); console.log\\('failedCount',failed.length\\); failed.forEach\\(f=>console.log\\(f.fullName,f.type,f.error\\)\\);\")",
+      "Bash(node -e \"console.log\\(require\\('crypto'\\).randomUUID\\(\\)\\); console.log\\(require\\('crypto'\\).randomUUID\\(\\)\\);\")",
+      "Bash(mv routes/about.json routes/companyInfo.json)",
+      "Bash(mv views/about.json views/companyInfo.json)",
+      "Bash(mkdir -p /tmp_backup_aa)",
+      "Bash(mv routes/availableApartments.json ../../../../../availableApartments.route.json.bak)",
+      "Bash(mv views/availableApartments.json ../../../../../availableApartments.view.json.bak)",
+      "Bash(mv routes/companyInfo.json routes/aboutUs.json)",
+      "Bash(mv views/companyInfo.json views/aboutUs.json)",
+      "Bash(mv routes/availableApartments.json ../../../../../availableApartments.route.json.bak2)",
+      "Bash(mv views/availableApartments.json ../../../../../availableApartments.view.json.bak2)",
+      "Bash(py -3 -c \"print\\(1\\)\")",
+      "Bash(node -)",
+      "WebFetch(domain:www.google.com)",
+      "Bash(rm -f deploy_dryrun*.json deploy_real.json retrieve_verify.json *)",
+      "Bash(grep -o 'headerTitle.\\\\{0,30\\\\}' force-app/main/default/experiences/PHP_Wade1/views/contactUs.json)",
+      "Bash(sf apex *)",
+      "Bash(sf api *)",
+      "Bash(mkdir -p /tmp/destructive_test/destructiveChanges)",
+      "Bash(cat)",
+      "mcp__plugin_browser_browser__browser_navigate",
+      "Bash(\"/c/Program Files/sf/client/bin/sf.cmd\" data query -o phpProd -q \"SELECT Id, Name, Status, IsValid, LengthWithoutComments FROM ApexClass WHERE Name = 'PHP_OTPService'\" --json)",
+      "Bash(cmd.exe /c \"\\\\\"C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd\\\\\" data query -o phpProd -q \\\\\"SELECT Id, Name, Status, IsValid, LengthWithoutComments FROM ApexClass WHERE Name = 'PHP_OTPService'\\\\\" --json\")",
+      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' data query -o phpProd -q \\\\\"SELECT Id, Name, Status, IsValid FROM ApexClass WHERE Name = 'PHP_OTPService'\\\\\" --json\")",
+      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' data query -o phpProd -q \\\\\"SELECT COUNT\\(\\) FROM OTP_Session__c\\\\\" --json\")",
+      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' data query -o phpProd -q \\\\\"SELECT Id, PersonMobilePhone, IsPersonAccount FROM Account WHERE PersonMobilePhone = '8123207962'\\\\\" --json\")",
+      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' apex run -o phpProd --file _debug_otp_test.apex\")",
+      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' data query -o phpProd -q \\\\\"SELECT Id, Account__c, Code__c, Expires_At__c FROM OTP_Session__c\\\\\" --json\")"
+    ],
+    "additionalDirectories": [
+      "\\tmp",
+      "C:\\Users\\wwade\\Documents\\GitHub\\wwadephp"
+    ]
+  }
+}

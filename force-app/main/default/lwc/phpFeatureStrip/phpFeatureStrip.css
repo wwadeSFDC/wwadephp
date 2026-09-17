@@ -1,0 +1,38 @@
+:host {
+    display: block;
+}
+
+.php-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 3rem 1.5rem;
+    background: #f7f5f2;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .php-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+.php-feature__icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.php-feature__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #1b3a5c;
+    font-size: 1.1rem;
+    margin: 0 0 0.4rem 0;
+}
+
+.php-feature__text {
+    font-family: 'Open Sans', sans-serif;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+    margin: 0;
+}

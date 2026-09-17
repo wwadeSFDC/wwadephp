@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Deliver personalized customer interactions with an autonomous AI agent. Agentforce Service Agent intelligently supports your customers with common inquiries and escalates complex issues.</description>
+    <localTopicLinks>
+        <genAiPluginName>Agent_Router_16jVW000000TVd7</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Door_Unlock_Access_16jVW000000TVd7</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Lease_Renewal_16jVW000000TVd7</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Maintenance_Requests_16jVW000000TVd7</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Tenant_Verification_16jVW000000TVd7</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>Maintenance_Requests_16jVW000000TVd7</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Allows verified tenants to submit new maintenance requests and check the status of existing ones. Only available after identity verification is complete.</description>
+        <developerName>Maintenance_Requests_16jVW000000TVd7</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179VW0000015rG3</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179VW0000015rG3</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Check_Maintenance_History_179VW0000015rG3</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Create_Maintenance_Case_179VW0000015rG3</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Check_Maintenance_History_179VW0000015rG3</fullName>
+            <description>Retrieves open and recently closed maintenance cases for the verified tenant. Present results including case number, issue description, status, and date.</description>
+            <developerName>Check_Maintenance_History_179VW0000015rG3</developerName>
+            <invocationTarget>PHP_CheckMaintenanceHistory_Flow</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Check_Maintenance_History</localDeveloperName>
+            <masterLabel>Check Maintenance History</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>Create_Maintenance_Case_179VW0000015rG3</fullName>
+            <description>Submits a new maintenance request case for the verified tenant. Requires a description of the issue and the tenant&apos;s Account ID. Always confirm details with the tenant before calling this action.</description>
+            <developerName>Create_Maintenance_Case_179VW0000015rG3</developerName>
+            <invocationTarget>PHP_CreateMaintenanceCase_Flow</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Create_Maintenance_Case</localDeveloperName>
+            <masterLabel>Create Maintenance Case</masterLabel>
+        </localActions>
+        <localDeveloperName>Maintenance_Requests</localDeveloperName>
+        <masterLabel>Maintenance Requests</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>Tenant_Verification_16jVW000000TVd7</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Verifies the identity of the tenant before any private actions are taken. Sends an OTP to the tenant&apos;s email on file and validates their response. All other topics require this topic to complete successfully first.</description>
+        <developerName>Tenant_Verification_16jVW000000TVd7</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179VW0000015rG4</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179VW0000015rG4</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Send_OTP_179VW0000015rG4</functionName>
+        </localActionLinks>
+        <localActionLinks>
+            <functionName>Verify_Active_Tenant_179VW0000015rG4</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Verify_Active_Tenant_179VW0000015rG4</fullName>
+            <description>Looks up an active tenant record by email address. Returns the tenant&apos;s Account ID and name if found. Call this first to confirm the email belongs to an active tenant before sending an OTP.</description>
+            <developerName>Verify_Active_Tenant_179VW0000015rG4</developerName>
+            <invocationTarget>PHP_VerifyActiveTenant_Flow</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Verify_Active_Tenant</localDeveloperName>
+            <masterLabel>Verify Active Tenant</masterLabel>
+        </localActions>
+        <localActions>
+            <fullName>Send_OTP_179VW0000015rG4</fullName>
+            <description>Sends a one-time password to the tenant&apos;s email address on file. Call this after confirming the tenant exists. Do not call this more than 3 times in a session.</description>
+            <developerName>Send_OTP_179VW0000015rG4</developerName>
+            <invocationTarget>PHP_OTPService</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Send_OTP</localDeveloperName>
+            <masterLabel>Send OTP</masterLabel>
+        </localActions>
+        <localDeveloperName>Tenant_Verification</localDeveloperName>
+        <masterLabel>Tenant Verification</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>Lease_Renewal_16jVW000000TVd7</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Helps verified tenants explore lease renewal options and generates a personalised renewal offer email using the PHP_RenewalEmail_PromptTemplate.</description>
+        <developerName>Lease_Renewal_16jVW000000TVd7</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179VW0000015rG1</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179VW0000015rG1</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Generate_Renewal_Email_179VW0000015rG1</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Generate_Renewal_Email_179VW0000015rG1</fullName>
+            <description>Generates a personalised lease renewal email for the tenant using the PHP Renewal Email Prompt Template. Pass all five inputs. Only call this after the tenant has confirmed they want a renewal offer.</description>
+            <developerName>Generate_Renewal_Email_179VW0000015rG1</developerName>
+            <invocationTarget>PHP_RenewalEmail_PromptTemplate</invocationTarget>
+            <invocationTargetType>generatePromptResponse</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Generate_Renewal_Email</localDeveloperName>
+            <masterLabel>Generate Renewal Email</masterLabel>
+        </localActions>
+        <localDeveloperName>Lease_Renewal</localDeveloperName>
+        <masterLabel>Lease Renewal</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>Door_Unlock_Access_16jVW000000TVd7</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Allows verified tenants to request door unlock or keyfob replacement via SmartRent integration. Contains strict security guardrails against social engineering and jailbreak attempts.</description>
+        <developerName>Door_Unlock_Access_16jVW000000TVd7</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179VW0000015rG2</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179VW0000015rG2</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>SmartRent_Door_Unlock_179VW0000015rG2</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>SmartRent_Door_Unlock_179VW0000015rG2</fullName>
+            <description>Sends an unlock command to SmartRent for the verified tenant&apos;s unit. Only call this after OTP verification is confirmed and the unit number matches the tenant&apos;s record. Never call this for a unit the tenant does not reside in.</description>
+            <developerName>SmartRent_Door_Unlock_179VW0000015rG2</developerName>
+            <invocationTarget>PHP_SmartRentService</invocationTarget>
+            <invocationTargetType>apex</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>SmartRent_Door_Unlock</localDeveloperName>
+            <masterLabel>SmartRent Door Unlock</masterLabel>
+        </localActions>
+        <localDeveloperName>Door_Unlock_Access</localDeveloperName>
+        <masterLabel>Door Unlock / Access</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>Agent_Router_16jVW000000TVd7</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Welcome the user and determine the appropriate subagent based on user input</description>
+        <developerName>Agent_Router_16jVW000000TVd7</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.
+
+{{state.AgentScriptInternal_agent_instructions}}</description>
+            <developerName>instruction0_179VW0000015rG5</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179VW0000015rG5</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Check_Maintenance_History_179VW0000015rG5</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Check_Maintenance_History_179VW0000015rG5</fullName>
+            <description>Retrieves open and recently closed maintenance cases for the verified tenant. Present results including case number, issue description, status, and date.</description>
+            <developerName>Check_Maintenance_History_179VW0000015rG5</developerName>
+            <invocationTarget>PHP_CheckMaintenanceHistory_Flow</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Check_Maintenance_History</localDeveloperName>
+            <masterLabel>Check Maintenance History</masterLabel>
+        </localActions>
+        <localDeveloperName>Agent_Router</localDeveloperName>
+        <masterLabel>Agent Router</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <masterLabel>PHP Tenant Concierge</masterLabel>
+    <plannerSurfaces>
+        <adaptiveResponseAllowed>true</adaptiveResponseAllowed>
+        <callRecordingAllowed>false</callRecordingAllowed>
+        <outboundRouteConfigs>
+            <escalationMessage>I&apos;m transferring you to a Pacific Haven Properties team member. They&apos;ll be with you shortly.</escalationMessage>
+            <outboundRouteName>PHP_Inbound_AuthRouting_Flow</outboundRouteName>
+            <outboundRouteType>OmniChannelFlow</outboundRouteType>
+        </outboundRouteConfigs>
+        <surface>SurfaceAction__CustomerWebClient</surface>
+        <surfaceType>CustomerWebClient</surfaceType>
+    </plannerSurfaces>
+    <plannerType>Atlas__ConcurrentMultiAgentOrchestration</plannerType>
+    <voiceDefinition>
+        <developerName>voiceConfig_16jVW000000TVd7</developerName>
+        <inboundFillerWordsBool>false</inboundFillerWordsBool>
+        <inboundModel>sfdc_ai__Default_Nova_2_PhoneCall</inboundModel>
+        <label>voiceConfig_16jVW000000TVd7</label>
+        <languageCode>en_US</languageCode>
+        <outboundModel>sfdc_ai__Default_Eleven_Flash_V2_5</outboundModel>
+        <outboundSimilarity>0.75</outboundSimilarity>
+        <outboundSpeedNum>1.0</outboundSpeedNum>
+        <outboundStability>0.65</outboundStability>
+        <outboundVoice>Mark</outboundVoice>
+        <voiceIdentifier>UgBBYS2sOqTuMpoF3BR0</voiceIdentifier>
+    </voiceDefinition>
+</GenAiPlannerBundle>

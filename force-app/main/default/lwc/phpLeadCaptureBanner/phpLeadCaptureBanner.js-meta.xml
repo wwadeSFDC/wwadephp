@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>PHP Lead Capture Banner</masterLabel>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="headingText" type="String" label="Heading Text" default="Ready to find your next home? Our leasing team is here to help."/>
+            <property name="buttonLabel" type="String" label="Button Label" default="Start a Conversation"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

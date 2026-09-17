@@ -1,0 +1,28 @@
+{
+  "required" : [ "inputBedrooms", "inputLocationName", "inputMaxRent" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputBedrooms" : {
+      "title" : "inputBedrooms",
+      "description" : "Desired number of bedrooms.",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputLocationName" : {
+      "title" : "inputLocationName",
+      "description" : "Preferred property location name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputMaxRent" : {
+      "title" : "inputMaxRent",
+      "description" : "Maximum monthly rent the prospect is willing to pay.",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

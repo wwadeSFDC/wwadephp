@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Public-facing leasing assistant for Pacific Haven Properties. Helps prospective residents search available apartments, get property information, and capture their contact details for follow-up.</description>
+    <localTopicLinks>
+        <genAiPluginName>Apartment_Search_16jVW000000Sxy1</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>Lead_Capture_and_Property_Information_16jVW000000Sxy1</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>agent_router_16jVW000000Sxy1</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>ambiguous_question_16jVW000000Sxy1</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>escalation_16jVW000000Sxy1</genAiPluginName>
+    </localTopicLinks>
+    <localTopicLinks>
+        <genAiPluginName>off_topic_16jVW000000Sxy1</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>Apartment_Search_16jVW000000Sxy1</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Helps prospective residents search for available apartments based on bedroom count and move-in date. Enforces price guardrails.</description>
+        <developerName>Apartment_Search_16jVW000000Sxy1</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179VW0000014gsv</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179VW0000014gsv</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Search_Available_Units_179VW0000014gsv</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Search_Available_Units_179VW0000014gsv</fullName>
+            <description>Searches for available apartment units matching the prospect&apos;s bedroom count and move-in date. Call this when the user asks about availability.</description>
+            <developerName>Search_Available_Units_179VW0000014gsv</developerName>
+            <invocationTarget>PHP_SearchApartments_Flow</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Search_Available_Units</localDeveloperName>
+            <masterLabel>Search Available Units</masterLabel>
+        </localActions>
+        <localDeveloperName>Apartment_Search</localDeveloperName>
+        <masterLabel>Apartment Search</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>agent_router_16jVW000000Sxy1</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Welcome the user and determine the appropriate subagent based on user input</description>
+        <developerName>agent_router_16jVW000000Sxy1</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.
+
+{{state.AgentScriptInternal_agent_instructions}}</description>
+            <developerName>instruction0_179VW0000014gsy</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179VW0000014gsy</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>agent_router</localDeveloperName>
+        <masterLabel>Agent Router</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>escalation_16jVW000000Sxy1</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Handles requests from users who want to transfer or escalate their conversation to a live human agent.</description>
+        <developerName>escalation_16jVW000000Sxy1</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179VW0000014gsz</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179VW0000014gsz</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>escalation</localDeveloperName>
+        <masterLabel>Escalation</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>off_topic_16jVW000000Sxy1</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Redirect conversation to relevant topics when user request goes off-topic</description>
+        <developerName>off_topic_16jVW000000Sxy1</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179VW0000014gsw</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179VW0000014gsw</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>off_topic</localDeveloperName>
+        <masterLabel>Off Topic</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>Lead_Capture_and_Property_Information_16jVW000000Sxy1</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Captures prospect contact details to create a Lead record. Also answers property questions using the Resident Handbook.</description>
+        <developerName>Lead_Capture_and_Property_Information_16jVW000000Sxy1</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179VW0000014gsx</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179VW0000014gsx</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>Create_Prospect_Lead_179VW0000014gsx</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>Create_Prospect_Lead_179VW0000014gsx</fullName>
+            <description>Creates a Lead record for a prospective resident who has expressed interest. Call once per conversation after collecting name and email.</description>
+            <developerName>Create_Prospect_Lead_179VW0000014gsx</developerName>
+            <invocationTarget>PHP_CreateLead_Flow</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>Create_Prospect_Lead</localDeveloperName>
+            <masterLabel>Create Prospect Lead</masterLabel>
+        </localActions>
+        <localDeveloperName>Lead_Capture_and_Property_Information</localDeveloperName>
+        <masterLabel>Lead Capture and Property Information</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <localTopics>
+        <fullName>ambiguous_question_16jVW000000Sxy1</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Redirect conversation to relevant topics when user request is too ambiguous</description>
+        <developerName>ambiguous_question_16jVW000000Sxy1</developerName>
+        <genAiPluginInstructions>
+            <description>You are an AI Agent.</description>
+            <developerName>instruction0_179VW0000014gt0</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction0_179VW0000014gt0</masterLabel>
+            <sortOrder>1</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localDeveloperName>ambiguous_question</localDeveloperName>
+        <masterLabel>Ambiguous Question</masterLabel>
+        <pluginType>Topic</pluginType>
+    </localTopics>
+    <masterLabel>PHP Leasing Assistant</masterLabel>
+    <plannerType>Atlas__ConcurrentMultiAgentOrchestration</plannerType>
+</GenAiPlannerBundle>

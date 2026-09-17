@@ -1,0 +1,89 @@
+{
+  "appPageId" : "4a48d801-3c44-439f-a5ed-362174bc97df",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "10acf6b3-9d48-4a79-ab42-a192bef1cdcb",
+  "label" : "Available Apartments",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "219f628d-7571-4421-9f88-944f70edc003",
+          "columns" : [ {
+            "UUID" : "86bd25ae-2567-4dd6-8b17-3b80ace46074",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "219f628d-7571-4421-9f88-944f70edc003",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<div style='background:#1b3a5c;padding:3rem 1.5rem;text-align:center;'><h1 style='font-family:Montserrat,sans-serif;font-weight:700;color:#ffffff;margin:0 0 0.5rem 0;'>Available Apartments</h1><p style='font-family:\"Open Sans\",sans-serif;color:#e6e9ed;margin:0;'>Browse our current availability across all Pacific Haven communities</p></div>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "9a39b014-5b75-4d4c-a1a1-1ffc53be3a9d",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "heading" : "",
+            "maxResults" : 50,
+            "featuredOnly" : false,
+            "showFilters" : true
+          },
+          "componentName" : "c:phpApartmentGallery",
+          "id" : "42b38d69-2055-4596-ad6f-5e49756cb4f2",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:phpSiteFooter",
+          "id" : "f52fa88f-30a1-4947-909e-530f7b07a584",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "86bd25ae-2567-4dd6-8b17-3b80ace46074",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "3e7bab59-b22c-4ae1-9aae-20cec4c3aa3d",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "Browse our current availability across all Pacific Haven communities.",
+        "title" : "Available Apartments | Pacific Haven Properties"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "d6d2bced-a53c-4622-9664-71d8b57491ae",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "8bca012b-0232-4cec-89f2-0e5da9d16c9c",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-available-apartments"
+}

@@ -8,5 +8,5 @@
   "name": "cursor",
   "namespace": "",
   "sfdcLoginUrl": "https://orgfarm-01ac5780bc.test1.my.pc-rnd.salesforce.com/",
-  "sourceApiVersion": "64.0"
+  "sourceApiVersion": "65.0"
 }

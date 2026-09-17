@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Returns information from a retriever associated with a knowledge based data library.</description>
+    <developerName>Knowledge_PHP_Knowledge_Article_Library</developerName>
+    <invocationTarget>KA_PHP_Knowledge_Article_Library_1Cx_O69734cf99c</invocationTarget>
+    <invocationTargetType>retriever</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+    <localDeveloperName>Knowledge_PHP_Knowledge_Article_Library</localDeveloperName>
+    <masterLabel>Get Information from PHP_Knowledge_Article_Library</masterLabel>
+    <progressIndicatorMessage>Getting information...</progressIndicatorMessage>
+</GenAiFunction>

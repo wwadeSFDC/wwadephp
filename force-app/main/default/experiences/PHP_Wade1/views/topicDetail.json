@@ -1,0 +1,67 @@
+{
+  "appPageId" : "4a48d801-3c44-439f-a5ed-362174bc97df",
+  "componentName" : "siteforce:sldsTwoCol84Layout",
+  "dataProviders" : [ ],
+  "id" : "45beb17b-67e8-42c5-885a-275885790667",
+  "label" : "Topic Detail",
+  "regions" : [ {
+    "id" : "5efdeb98-0c5c-4f03-8030-09203e54c3cd",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "articleListPageSize" : 10,
+        "showTitle" : true,
+        "title" : "Articles",
+        "topicId" : "{!recordId}"
+      },
+      "componentName" : "selfService:topicRelatedArticle",
+      "id" : "7c892cd2-5bb0-413d-9c51-7df8ce8116cd",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "073e9458-6e39-4b97-801b-19f946218ec5",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "showTopicsMetric" : true,
+        "title" : "Related Topics",
+        "topicId" : "{!recordId}"
+      },
+      "componentName" : "forceCommunity:relatedTopics",
+      "id" : "4a8446ed-a1b2-4bfc-a2f0-082555e6270b",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "84e5290a-ec56-4422-9f6c-cfadde057ade",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "026231ca-28e2-4df5-8f03-2bcbfc75ac78",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "{!Record.Description}",
+        "title" : "{!Record._Title}"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "7f5731e5-0177-45cc-9d3a-229e021402ee",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "19d4a7e3-87b8-4bdc-9b48-d700aa00fc2f",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "topic"
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>PHP Apartment Gallery</masterLabel>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="heading" type="String" label="Heading" default="Featured Apartments"/>
+            <property name="maxResults" type="Integer" label="Max Results" default="6"/>
+            <property name="featuredOnly" type="Boolean" label="Featured/Available Only" default="false"/>
+            <property name="showFilters" type="Boolean" label="Show Search Filter Bar" default="false"/>
+            <property name="filterState" type="String" label="Default State Filter" default="All"/>
+            <property name="filterBedrooms" type="String" label="Default Bedrooms Filter" default="All"/>
+            <property name="filterMaxRent" type="Integer" label="Default Max Monthly Rent"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

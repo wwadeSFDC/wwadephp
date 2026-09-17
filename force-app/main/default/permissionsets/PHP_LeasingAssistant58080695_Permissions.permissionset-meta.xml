@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows custom permissions for Agentforce Agent : PHP_LeasingAssistant&apos;s agent user : php_leasingassistant@00dvw00000eko6935263833.ext.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>PHP_LeasingAssistant58080695 Permissions</label>
+    <license>External Einstein Agent</license>
+</PermissionSet>

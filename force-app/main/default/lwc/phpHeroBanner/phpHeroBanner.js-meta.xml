@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>PHP Hero Banner</masterLabel>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="headline" type="String" label="Headline" default="Find Your Perfect Home"/>
+            <property name="subheadline" type="String" label="Subheadline" default="Premium apartments across California, Oregon &amp; Washington"/>
+            <property name="primaryButtonLabel" type="String" label="Primary Button Label" default="Browse Apartments"/>
+            <property name="primaryButtonUrl" type="String" label="Primary Button URL" default="/available-apartments"/>
+            <property name="secondaryButtonLabel" type="String" label="Secondary Button Label" default="Chat with a Leasing Agent"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>PHP Stats Tiles</masterLabel>
+    <targets>
+        <target>lightningCommunity__Default</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="value1" type="String" label="Stat 1 Value" default="50+"/>
+            <property name="label1" type="String" label="Stat 1 Label" default="Communities"/>
+            <property name="value2" type="String" label="Stat 2 Value" default="3"/>
+            <property name="label2" type="String" label="Stat 2 Label" default="States"/>
+            <property name="value3" type="String" label="Stat 3 Value" default="Premium"/>
+            <property name="label3" type="String" label="Stat 3 Label" default="Amenities"/>
+            <property name="value4" type="String" label="Stat 4 Value" default="24/7"/>
+            <property name="label4" type="String" label="Stat 4 Label" default="Support"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

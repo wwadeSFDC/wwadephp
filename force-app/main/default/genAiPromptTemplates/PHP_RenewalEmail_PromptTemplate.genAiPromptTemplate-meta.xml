@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>PMHGWmJpEwLykbDgIhfkAToHBXqavnWuf79lHH6QE5U=_2</activeVersionIdentifier>
+    <developerName>PHP_RenewalEmail_PromptTemplate</developerName>
+    <masterLabel>PHP Renewal Email Prompt Template</masterLabel>
+    <templateVersions>
+        <content>You are a friendly and professional leasing assistant for {!$Input:PropertyName}, a residential property managed by Pacific Haven Properties.
+
+Write a warm, professional lease renewal email to {!$Input:TenantName}, who lives in Unit {!$Input:UnitNumber}. Their current lease expires on {!$Input:LeaseEndDate}.
+
+The renewal offer includes the following details:
+{!$Input:RenewalOfferDetails}
+
+Guidelines:
+- Address the tenant by name
+- Thank them for being a valued resident
+- Clearly state the lease expiry date and the renewal offer
+- Encourage them to reach out with any questions
+- Close with a warm, professional sign-off on behalf of the Pacific Haven Properties Leasing Team
+- Keep the tone friendly but professional
+- Do not invent any details not provided above</content>
+        <inputs>
+            <apiName>TenantName</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>TenantName</masterLabel>
+            <referenceName>Input:TenantName</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>LeaseEndDate</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>LeaseEndDate</masterLabel>
+            <referenceName>Input:LeaseEndDate</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>UnitNumber</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>UnitNumber</masterLabel>
+            <referenceName>Input:UnitNumber</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>PropertyName</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>PropertyName</masterLabel>
+            <referenceName>Input:PropertyName</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>RenewalOfferDetails</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>RenewalOfferDetails</masterLabel>
+            <referenceName>Input:RenewalOfferDetails</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>J+kCLk1/Yu30dGoR+zRc/iedkz4jIpv42Ijwco01pLE=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are a friendly and professional leasing assistant for {!$Input:PropertyName}, a residential property managed by Pacific Haven Properties.
+
+Write a warm, professional lease renewal email to {!$Input:TenantName}, who lives in Unit {!$Input:UnitNumber}. Their current lease expires on {!$Input:LeaseEndDate}.
+
+The renewal offer includes the following details:
+{!$Input:RenewalOfferDetails}
+
+Guidelines:
+- Address the tenant by name
+- Thank them for being a valued resident
+- Clearly state the lease expiry date and the renewal offer
+- Encourage them to reach out with any questions
+- Close with a warm, professional sign-off on behalf of the Pacific Haven Properties Leasing Team
+- Keep the tone friendly but professional
+- Do not invent any details not provided above</content>
+        <inputs>
+            <apiName>TenantName</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>TenantName</masterLabel>
+            <referenceName>Input:TenantName</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>LeaseEndDate</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>LeaseEndDate</masterLabel>
+            <referenceName>Input:LeaseEndDate</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>UnitNumber</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>UnitNumber</masterLabel>
+            <referenceName>Input:UnitNumber</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>PropertyName</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>PropertyName</masterLabel>
+            <referenceName>Input:PropertyName</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>RenewalOfferDetails</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>RenewalOfferDetails</masterLabel>
+            <referenceName>Input:RenewalOfferDetails</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>PMHGWmJpEwLykbDgIhfkAToHBXqavnWuf79lHH6QE5U=_2</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

@@ -1,0 +1,24 @@
+<template>
+    <footer class="php-footer">
+        <div class="php-footer__columns">
+            <div class="php-footer__col">
+                <h3 class="php-footer__brand">Pacific Haven Properties</h3>
+                <p class="php-footer__tagline">{tagline}</p>
+            </div>
+            <div class="php-footer__col">
+                <h4 class="php-footer__heading">Quick Links</h4>
+                <ul class="php-footer__links">
+                    <template for:each={quickLinks} for:item="link">
+                        <li key={link.label}><a href={link.url}>{link.label}</a></li>
+                    </template>
+                </ul>
+            </div>
+            <div class="php-footer__col">
+                <p class="php-footer__service-area">{serviceAreaText}</p>
+            </div>
+        </div>
+        <div class="php-footer__bottom">
+            <p>{copyrightText}</p>
+        </div>
+    </footer>
+</template>
