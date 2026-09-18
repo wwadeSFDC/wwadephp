@@ -40,7 +40,8 @@
       "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' data query -o phpProd -q \\\\\"SELECT COUNT\\(\\) FROM OTP_Session__c\\\\\" --json\")",
       "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' data query -o phpProd -q \\\\\"SELECT Id, PersonMobilePhone, IsPersonAccount FROM Account WHERE PersonMobilePhone = '8123207962'\\\\\" --json\")",
       "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' apex run -o phpProd --file _debug_otp_test.apex\")",
-      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' data query -o phpProd -q \\\\\"SELECT Id, Account__c, Code__c, Expires_At__c FROM OTP_Session__c\\\\\" --json\")"
+      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' data query -o phpProd -q \\\\\"SELECT Id, Account__c, Code__c, Expires_At__c FROM OTP_Session__c\\\\\" --json\")",
+      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' project deploy start -o phpProd -m PermissionSet:PHP_TenantConcierge_PS --json\")"
     ],
     "additionalDirectories": [
       "\\tmp",
