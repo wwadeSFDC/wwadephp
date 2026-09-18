@@ -1,0 +1,24 @@
+{
+  "forgotPasswordRouteId" : "07c39d68-1c65-4d86-9ea7-8b47dbc492be",
+  "isAvailableToGuests" : true,
+  "isFilteredComponentsView" : false,
+  "isProgressiveRenderingEnabled" : false,
+  "loginAppPageId" : "502d6e8b-b0a1-4c7e-88e0-b53978e10a81",
+  "mainAppPageId" : "4a48d801-3c44-439f-a5ed-362174bc97df",
+  "preferredDomain" : "none",
+  "selfRegistrationRouteId" : "072bc8fe-6964-4604-a12d-ebaeb85cd64e",
+  "trustedSitesForScript" : [ {
+    "id" : "6bec5164-f8ad-4c03-91dd-4d427ada68a2",
+    "isActive" : true,
+    "trustedSiteName" : "ESW_PHP_Leasing_Ch_1789557363246",
+    "trustedSiteUrl" : "https://orgfarm-01ac5780bc.test1.my.pc-rnd.site.com/ESWPHPLeasingCh1789557363246",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "0c2d0d90-6bf7-47b3-8c4f-ca8f74450465",
+    "isActive" : true,
+    "trustedSiteName" : "ESW_PHP_Tenant_Cha_1789557946750",
+    "trustedSiteUrl" : "https://orgfarm-01ac5780bc.test1.my.pc-rnd.site.com/ESWPHPTenantCha1789557946750",
+    "type" : "trustedSitesForScripts"
+  } ],
+  "type" : "site"
+}

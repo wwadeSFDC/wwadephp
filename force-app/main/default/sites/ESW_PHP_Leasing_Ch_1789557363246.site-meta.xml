@@ -32,6 +32,9 @@
     <siteIframeWhiteListUrls>
         <url>*.orgfarm-01ac5780bc.test1.my.pc-rnd.site.com</url>
     </siteIframeWhiteListUrls>
+    <siteIframeWhiteListUrls>
+        <url>https://orgfarm-01ac5780bc.test1.my.pc-rnd.site.com</url>
+    </siteIframeWhiteListUrls>
     <siteType>ChatterNetwork</siteType>
     <subdomain>phpwade</subdomain>
     <urlPathPrefix>ESWPHPLeasingCh1789557363246vforcesite</urlPathPrefix>

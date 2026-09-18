@@ -1,0 +1,124 @@
+{
+  "appPageId" : "4a48d801-3c44-439f-a5ed-362174bc97df",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "64a5d885-0325-4b0d-a5a2-fb10c4bf2123",
+  "label" : "Tenant Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "5be4f9c9-c23e-4e2e-89a0-bcdfff694e00",
+          "columns" : [ {
+            "UUID" : "66b6fbce-2495-45be-b1e1-f571eb4fdeb0",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "5be4f9c9-c23e-4e2e-89a0-bcdfff694e00",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "headline" : "Welcome Back",
+            "primaryButtonLabel" : "Submit a Request",
+            "primaryButtonUrl" : "/contact-us",
+            "secondaryButtonLabel" : "Chat with Support",
+            "subheadline" : "Manage your lease, request maintenance, and connect with your leasing team anytime."
+          },
+          "componentName" : "c:phpHeroBanner",
+          "id" : "73d22585-f230-4e83-8bad-1cd15ecd9937",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "icon1" : "🧾",
+            "title1" : "Rent & Payments",
+            "text1" : "View your balance and payment history",
+            "icon2" : "🔧",
+            "title2" : "24/7 Maintenance Support",
+            "text2" : "Submit and track maintenance requests",
+            "icon3" : "💬",
+            "title3" : "Message Your Leasing Team",
+            "text3" : "Get fast answers from your on-site team"
+          },
+          "componentName" : "c:phpFeatureStrip",
+          "id" : "31e60181-1264-4dc0-9366-5e3f13511f37",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "buttonLabel" : "Chat Now",
+            "headingText" : "Need help with your lease or a maintenance issue? Your leasing team is standing by."
+          },
+          "componentName" : "c:phpLeadCaptureBanner",
+          "id" : "9c089922-9dc7-4126-acd2-30936017df18",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:phpSiteFooter",
+          "id" : "5597e60a-34cf-456a-af37-40291aabbda9",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "clientVersion" : "WebV2",
+            "deploymentName" : "PHP_Tenant_Chat",
+            "hideChatButtonOnLoad" : "Visible",
+            "isExpSiteAuthMode" : true,
+            "mobileDeploymentName" : "",
+            "scrtUrl" : "https://orgfarm-01ac5780bc.test1.my.pc-rnd.salesforce-scrt.com",
+            "siteEndpoint" : "https://orgfarm-01ac5780bc.test1.my.pc-rnd.site.com/ESWPHPTenantCha1789557946750",
+            "snippetSettingsFile" : ""
+          },
+          "componentName" : "experience_messaging:embeddedMessaging",
+          "id" : "92b9d68d-6bb0-4f44-9a38-cbb490e75bde",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "66b6fbce-2495-45be-b1e1-f571eb4fdeb0",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "4399d982-823d-404d-96dd-bbcf40d0c928",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "Premium apartments across California, Oregon & Washington.",
+        "title" : "Pacific Haven Properties | Find Your Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "bc1f21aa-f709-48ba-a23a-fff9195842c9",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e0cc0e68-72f3-4b65-8bda-75a95d4239c8",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}

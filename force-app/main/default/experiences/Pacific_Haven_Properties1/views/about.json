@@ -1,0 +1,102 @@
+{
+  "appPageId" : "4a48d801-3c44-439f-a5ed-362174bc97df",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "16049a29-3b24-4eba-a8b8-417950cf27fb",
+  "label" : "About",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "6df4bae1-7de9-4e4f-8826-3c959b7774d5",
+          "columns" : [ {
+            "UUID" : "2ebb4434-6eff-4b5d-9a56-a9984645554c",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "6df4bae1-7de9-4e4f-8826-3c959b7774d5",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<div style='background:#1b3a5c;padding:3rem 1.5rem;text-align:center;'><h1 style='font-family:Montserrat,sans-serif;font-weight:700;color:#ffffff;margin:0;'>About Pacific Haven Properties</h1></div>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "eafd0190-d6c5-43f4-ac9d-6ab0d9570fef",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "richTextValue" : "<div style='display:grid;grid-template-columns:1fr;gap:2rem;padding:3rem 1.5rem;max-width:1100px;margin:0 auto;'><div><h2 style=\"font-family:Montserrat,sans-serif;color:#1b3a5c;\">Our Story</h2><p style='font-family:\"Open Sans\",sans-serif;color:#1a1a1a;line-height:1.6;'>Founded with a Tenant First philosophy, Pacific Haven Properties manages over 50 premium residential apartment complexes across California, Oregon, and Washington. We believe every resident deserves a home they love and a team that cares.</p></div></div>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "89ccb975-93a1-467a-b717-6fe6327f9853",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "label1" : "Communities",
+            "label2" : "States",
+            "label3" : "Amenities",
+            "label4" : "Support",
+            "value1" : "50+",
+            "value2" : "3",
+            "value3" : "Premium",
+            "value4" : "24/7"
+          },
+          "componentName" : "c:phpStatsTiles",
+          "id" : "30266b70-15fc-4772-af06-0e5c260cd457",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : { },
+          "componentName" : "c:phpSiteFooter",
+          "id" : "125714f9-a1f9-408c-bd35-895c756eadfb",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "2ebb4434-6eff-4b5d-9a56-a9984645554c",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "27163e75-3b99-49c9-9035-08abe6b247a1",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "Learn about Pacific Haven Properties.",
+        "title" : "About | Pacific Haven Properties"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "ea75517f-dec7-4284-8ff0-750f7865ecfb",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "6c82609b-912a-4cb1-9059-8fc4ffd5a515",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-about"
+}

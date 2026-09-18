@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "10acf6b3-9d48-4a79-ab42-a192bef1cdcb",
+  "appPageId" : "4a48d801-3c44-439f-a5ed-362174bc97df",
+  "configurationTags" : [ ],
+  "devName" : "Available_Apartments__c",
+  "id" : "f76eebbc-c012-429b-a63b-97b5cc182250",
+  "label" : "Available Apartments",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-available-apartments",
+  "type" : "route",
+  "urlPrefix" : "available-apartments"
+}

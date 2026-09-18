@@ -1,0 +1,106 @@
+{
+  "appPageId" : "4a48d801-3c44-439f-a5ed-362174bc97df",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "2c9912f3-b48e-4d77-a896-f18305e1a8f1",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "headline" : "Find Your Perfect Home",
+        "primaryButtonLabel" : "Browse Apartments",
+        "primaryButtonUrl" : "/s/available-apartments",
+        "secondaryButtonLabel" : "Chat with a Leasing Agent",
+        "subheadline" : "Premium apartments across California, Oregon & Washington"
+      },
+      "componentName" : "c:phpHeroBanner",
+      "id" : "31c64bb8-017f-4f44-827f-c4d554f568a7",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "d89284b2-8630-4647-87f7-7c48dce2525d",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:phpFeatureStrip",
+      "id" : "56c89ddd-3ad3-4e7b-8897-00a129758fdf",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "featuredOnly" : true,
+        "heading" : "Featured Apartments",
+        "maxResults" : 3,
+        "showFilters" : false
+      },
+      "componentName" : "c:phpApartmentGallery",
+      "id" : "44dc8453-b6b0-4029-8b37-404ff5b4ffac",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "buttonLabel" : "Start a Conversation",
+        "headingText" : "Ready to find your next home? Our leasing team is here to help."
+      },
+      "componentName" : "c:phpLeadCaptureBanner",
+      "id" : "86fbbf55-d26a-4a24-8a36-fd03e6317933",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "bf14ab4b-82bd-4427-a3a0-c60cdf9fe3e1",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:phpSiteFooter",
+      "id" : "3d6a961e-6e9b-4158-a0b5-d625677f2837",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "clientVersion" : "WebV2",
+        "deploymentName" : "PHP_Leasing_Chat",
+        "hideChatButtonOnLoad" : "Visible",
+        "isExpSiteAuthMode" : false,
+        "mobileDeploymentName" : "",
+        "scrtUrl" : "https://orgfarm-01ac5780bc.test1.my.pc-rnd.salesforce-scrt.com",
+        "siteEndpoint" : "https://orgfarm-01ac5780bc.test1.my.pc-rnd.site.com/ESWPHPLeasingCh1789557363246",
+        "snippetSettingsFile" : ""
+      },
+      "componentName" : "experience_messaging:embeddedMessaging",
+      "id" : "2a4f7c2d-57f6-463e-92e3-1b108057a1c2",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "839b3f95-caa5-429d-880b-9872777ad947",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "Premium apartments across California, Oregon & Washington.",
+        "title" : "Pacific Haven Properties | Find Your Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "bfb5b8f1-179b-47a3-a317-df13b612a95e",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "cd6463d2-4729-4303-a827-4fd7108cccf0",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}

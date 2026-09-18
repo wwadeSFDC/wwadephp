@@ -19,26 +19,13 @@
     <genericErrorPage>Exception</genericErrorPage>
     <inMaintenancePage>InMaintenance</inMaintenancePage>
     <indexPage>CommunitiesLanding</indexPage>
-    <masterLabel>ESW_PHP_Tenant_Cha_1789557946750</masterLabel>
+    <masterLabel>Pacific Haven Properties</masterLabel>
     <redirectToCustomDomain>false</redirectToCustomDomain>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <serverIsDown>SNA_Q6lsn_sf_default_cdn_ESW_PHP_Tenant_Cha_17895579467501</serverIsDown>
+    <serverIsDown>SNA_DhuCY_sf_default_cdn_PHP_Wade1</serverIsDown>
     <siteAdmin>epic.out.dfd4dd777bbf@orgfarm.salesforce.com</siteAdmin>
     <siteGuestRecordDefaultOwner>epic.out.dfd4dd777bbf@orgfarm.salesforce.com</siteGuestRecordDefaultOwner>
-    <siteIframeWhiteListUrls>
-        <url>orgfarm-01ac5780bc.test1.my.pc-rnd.site.com</url>
-    </siteIframeWhiteListUrls>
-    <siteIframeWhiteListUrls>
-        <url>*.orgfarm-01ac5780bc.test1.my.pc-rnd.site.com</url>
-    </siteIframeWhiteListUrls>
-    <siteIframeWhiteListUrls>
-        <url>orgfarm-01ac5780bc--c.test1.vf.pc-rnd.force.com</url>
-    </siteIframeWhiteListUrls>
-    <siteIframeWhiteListUrls>
-        <url>https://orgfarm-01ac5780bc.test1.my.pc-rnd.site.com</url>
-    </siteIframeWhiteListUrls>
     <siteType>ChatterNetwork</siteType>
     <subdomain>phpwade</subdomain>
-    <urlPathPrefix>ESWPHPTenantCha1789557946750vforcesite</urlPathPrefix>
 </CustomSite>
