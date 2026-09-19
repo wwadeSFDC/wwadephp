@@ -71,20 +71,20 @@ public with sharing class PHP_OTPService {
         OTPResult result = new OTPResult();
 
         try {
-            Account tenant = [
-                SELECT Id, PersonMobilePhone
-                FROM Account
-                WHERE Id = :request.accountId.Id AND IsPersonAccount = true
-                WITH SYSTEM_MODE
-                LIMIT 1
-            ];
+            // request.accountId is already the record the caller (PHP_VerifyActiveTenant_Flow,
+            // running in system mode) looked up and validated as an active Person Account. A
+            // re-query here would run as the external agent user, and Account's external sharing
+            // model can't be crossed by WITH SYSTEM_MODE for external users, so it would always
+            // return zero rows even for a valid Id.
+            Id tenantId = request.accountId.Id;
+            String tenantPhone = request.accountId.PersonMobilePhone;
 
             String code = generateSixDigitCode();
 
             List<OTP_Session__c> existingSessions = [
                 SELECT Id
                 FROM OTP_Session__c
-                WHERE Account__c = :tenant.Id
+                WHERE Account_Id__c = :tenantId
                 WITH SYSTEM_MODE
             ];
             if (!existingSessions.isEmpty()) {
@@ -92,7 +92,7 @@ public with sharing class PHP_OTPService {
             }
 
             OTP_Session__c session = new OTP_Session__c(
-                Account__c = tenant.Id,
+                Account_Id__c = tenantId,
                 Code__c = code,
                 Expires_At__c = Datetime.now().addMinutes(otpTtlMinutes),
                 Failed_Attempts__c = 0,
@@ -100,7 +100,7 @@ public with sharing class PHP_OTPService {
             );
             insert as system session;
 
-            sendOTP(tenant.PersonMobilePhone, code);
+            sendOTP(tenantPhone, code);
 
             result.success = true;
             result.code = code;
@@ -122,7 +122,7 @@ public with sharing class PHP_OTPService {
             List<OTP_Session__c> sessions = [
                 SELECT Id, Code__c, Expires_At__c, Failed_Attempts__c, Locked__c
                 FROM OTP_Session__c
-                WHERE Account__c = :request.accountId.Id
+                WHERE Account_Id__c = :request.accountId.Id
                 WITH SYSTEM_MODE
                 LIMIT 1
             ];

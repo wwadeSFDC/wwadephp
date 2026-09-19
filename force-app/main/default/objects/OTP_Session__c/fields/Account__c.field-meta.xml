@@ -6,7 +6,7 @@
     <referenceTo>Account</referenceTo>
     <relationshipLabel>OTP Sessions</relationshipLabel>
     <relationshipName>OTP_Sessions</relationshipName>
-    <required>true</required>
+    <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>
 </CustomField>

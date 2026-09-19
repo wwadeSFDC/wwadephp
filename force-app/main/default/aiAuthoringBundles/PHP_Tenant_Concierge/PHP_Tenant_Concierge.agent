@@ -300,8 +300,8 @@ subagent Tenant_Verification:
                     description: "outputAccountId"
                 outputDebugOtpCode: string
                     label: "outputDebugOtpCode"
-                    is_displayable: False
-                    filter_from_agent: False
+                    is_displayable: True
+                    filter_from_agent: True
                     description: "outputDebugOtpCode"
                 outputErrorMessage: string
                     label: "outputErrorMessage"

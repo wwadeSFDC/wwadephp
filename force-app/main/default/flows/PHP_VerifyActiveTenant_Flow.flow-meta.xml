@@ -8,7 +8,7 @@
         <actionName>PHP_OTPService</actionName>
         <actionType>apex</actionType>
         <connector>
-            <targetReference>Assignment_Verified</targetReference>
+            <targetReference>Decision_OtpSent</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Fault_SetError</targetReference>
@@ -30,6 +30,14 @@
         <outputParameters>
             <assignToReference>outputDebugOtpCode</assignToReference>
             <name>code</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>varOtpSuccess</assignToReference>
+            <name>success</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>varOtpMessage</assignToReference>
+            <name>message</name>
         </outputParameters>
     </actionCalls>
     <apiVersion>65.0</apiVersion>
@@ -102,6 +110,26 @@
         </assignmentItems>
     </assignments>
     <assignments>
+        <name>Assignment_OtpFailed</name>
+        <label>Set OTP Send Failed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>outputIsVerified</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varOtpMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
         <name>Fault_SetError</name>
         <label>Fault - Set Error Message</label>
         <locationX>0</locationX>
@@ -144,6 +172,31 @@
                 <targetReference>Assignment_NoAccount</targetReference>
             </connector>
             <label>Account Not Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_OtpSent</name>
+        <label>OTP Sent Successfully?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assignment_Verified</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>OTP Sent</defaultConnectorLabel>
+        <rules>
+            <name>OtpFailed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varOtpSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_OtpFailed</targetReference>
+            </connector>
+            <label>OTP Failed</label>
         </rules>
     </decisions>
     <decisions>
@@ -322,6 +375,20 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Account</objectType>
+    </variables>
+    <variables>
+        <name>varOtpSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varOtpMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>varApartment</name>
