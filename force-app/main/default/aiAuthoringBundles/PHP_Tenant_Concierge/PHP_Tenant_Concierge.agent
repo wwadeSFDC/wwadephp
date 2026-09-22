@@ -550,7 +550,7 @@ subagent Door_Unlock_Access:
                     complex_data_type_name: "lightning__recordInfoType"
                 actionType: string
                     label: "actionType"
-                    description: "actionType"
+                    description: "The SmartRent action to perform. Pass exactly the literal value UNLOCK_DOOR for a standard door unlock request, or DEACTIVATE_KEYFOB to deactivate a keyfob. No other values are accepted."
                     is_required: True
                 unitIdentifier: string
                     label: "unitIdentifier"

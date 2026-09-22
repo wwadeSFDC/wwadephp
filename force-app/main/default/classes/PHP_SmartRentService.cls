@@ -1,6 +1,7 @@
 /**
- * Ops Copilot / Tenant Concierge door-unlock subagent action. Performs authenticated
- * callouts to the SmartRent (MuleSoft mock) API via the PHP_SmartRent_NC Named Credential.
+ * Ops Copilot / Tenant Concierge door-unlock subagent action. The real SmartRent
+ * (MuleSoft) integration was never finalized for this Capstone, so this simulates a
+ * successful device response instead of making a callout.
  */
 public with sharing class PHP_SmartRentService {
 
@@ -42,43 +43,17 @@ public with sharing class PHP_SmartRentService {
     private static SmartRentActionResult performAction(SmartRentActionRequest request) {
         SmartRentActionResult result = new SmartRentActionResult();
 
-        try {
-            HttpRequest req = new HttpRequest();
-            // TODO: confirm endpoint path with MuleSoft team once the mock contract is finalized.
-            req.setEndpoint('callout:PHP_SmartRent_NC/api/v1/action');
-            req.setMethod('POST');
-            req.setHeader('Content-Type', 'application/json');
-            req.setBody(JSON.serialize(new Map<String, Object>{
-                'accountId' => request.accountId.Id,
-                'actionType' => request.actionType,
-                'unitIdentifier' => request.unitIdentifier
-            }));
-
-            Http http = new Http();
-            HttpResponse res = http.send(req);
-
-            if (res.getStatusCode() == 200) {
-                Map<String, Object> responseBody = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
-                Boolean actionSucceeded = responseBody.containsKey('success') ? (Boolean) responseBody.get('success') : false;
-
-                result.success = actionSucceeded;
-                result.responseMessage = actionSucceeded
-                    ? 'The requested action was completed successfully.'
-                    : 'The requested action could not be completed at this time.';
-            } else {
-                result.success = false;
-                result.responseMessage = 'The requested action could not be completed at this time.';
-            }
-        } catch (CalloutException ce) {
-            System.debug(LoggingLevel.ERROR, 'PHP_SmartRentService callout error: ' + ce.getMessage());
+        if (!ACTION_UNLOCK_DOOR.equalsIgnoreCase(request.actionType) && !ACTION_DEACTIVATE_KEYFOB.equalsIgnoreCase(request.actionType)) {
             result.success = false;
-            result.responseMessage = 'We were unable to reach the smart lock system. Please try again shortly.';
-        } catch (Exception e) {
-            System.debug(LoggingLevel.ERROR, 'PHP_SmartRentService error: ' + e.getMessage());
-            result.success = false;
-            result.responseMessage = 'We were unable to complete the requested action. Please try again shortly.';
+            result.responseMessage = 'The requested action could not be completed at this time.';
+            return result;
         }
 
+        System.debug(LoggingLevel.INFO, 'PHP_SmartRentService mock action ' + request.actionType
+            + ' for unit ' + request.unitIdentifier + ' on account ' + request.accountId.Id);
+
+        result.success = true;
+        result.responseMessage = 'The requested action was completed successfully.';
         return result;
     }
 }

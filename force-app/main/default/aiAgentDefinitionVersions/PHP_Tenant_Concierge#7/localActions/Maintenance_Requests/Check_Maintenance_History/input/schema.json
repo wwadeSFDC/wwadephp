@@ -1,0 +1,21 @@
+{
+  "required" : [ "inputAccountId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "inputAccountId" : {
+      "title" : "inputAccountId",
+      "description" : "inputAccountId",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "inputStatusFilter" : {
+      "title" : "inputStatusFilter",
+      "description" : "inputStatusFilter",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

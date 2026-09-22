@@ -71,11 +71,29 @@
       "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' agent --help\")",
       "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' agent publish --help\")",
       "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' agent publish authoring-bundle --help\")",
-      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' agent publish authoring-bundle -o phpProd --api-name PHP_Tenant_Concierge --json\")"
+      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' agent publish authoring-bundle -o phpProd --api-name PHP_Tenant_Concierge --json\")",
+      "Bash(powershell.exe -NoProfile -Command \"Get-ChildItem -Path 'c:\\\\Users\\\\wwade\\\\Documents\\\\GitHub\\\\wwadephp\\\\force-app\\\\main\\\\default\\\\classes' -Filter 'PHP_SmartRentService*'\")",
+      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' data query -o phpProd -q \\\\\"SELECT Id, DeveloperName, Endpoint FROM NamedCredential\\\\\" --json\")",
+      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' project deploy start -o phpProd -m ApexClass:PHP_SmartRentService -m ApexClass:PHP_SmartRentServiceTest --json\")",
+      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' apex run test -o phpProd -n PHP_SmartRentServiceTest -r human --synchronous --json\")",
+      "Bash(powershell.exe -NoProfile -Command \"& 'C:\\\\Program Files\\\\sf\\\\client\\\\bin\\\\sf.cmd' project deploy start -o phpProd -m ApexClass:PHP_SmartRentService --json\")",
+      "Bash(python -c \"import xml.dom.minidom as m; m.parse\\('force-app/main/default/flows/PHP_GetMoveInSpecials_Flow.flow-meta.xml'\\); print\\('OK'\\)\")",
+      "Bash(xxd)",
+      "Bash(command -v node)",
+      "Bash(command -v py)",
+      "Bash(command -v python)",
+      "Bash(command -v python3)",
+      "Bash(/c/Python314/python -c ' *)",
+      "Bash(xargs grep -l \"PHP\")",
+      "Bash(xargs -I{} wc -l {})",
+      "Bash(git check-ignore *)",
+      "Bash(git status *)",
+      "Bash(rm -rf \"force-app/main/default/aiAuthoringBundles/PHP_Dummy_Agent\" \\\\ *)"
     ],
     "additionalDirectories": [
       "\\tmp",
-      "C:\\Users\\wwade\\Documents\\GitHub\\wwadephp"
+      "C:\\Users\\wwade\\Documents\\GitHub\\wwadephp",
+      "C:\\Users\\wwade\\Documents\\GitHub\\wwadephp\\force-app\\main\\default\\aiAuthoringBundles\\PHP_Dummy_Agent"
     ]
   }
 }

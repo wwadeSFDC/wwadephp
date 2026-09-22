@@ -4,18 +4,124 @@
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assignment_AddSpecial</name>
-        <label>Add Special to Results</label>
+        <label>Add Special to Summary</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignmentItems>
-            <assignToReference>outputSpecials</assignToReference>
+            <assignToReference>specialsSummary</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>Loop_Specials</elementReference>
+                <elementReference>varSpecialLocation.Name</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>outputCount</assignToReference>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue> (</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>varSpecialLocation.City__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>, </stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>varSpecialLocation.State__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>) — Move in </stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Specials.Month__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue> </stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Specials.Year__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue> and save $</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Specials.Rent_Discount__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>/mo for </stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Specials.Number_of_Months__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue> month(s) on a </stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Specials.Number_of_Bedrooms__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>-bedroom unit.
+</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>specialsCount</assignToReference>
             <operator>Add</operator>
             <value>
                 <numberValue>1.0</numberValue>
@@ -24,6 +130,19 @@
         <connector>
             <targetReference>Loop_Specials</targetReference>
         </connector>
+    </assignments>
+    <assignments>
+        <name>Assignment_Set_No_Specials_Message</name>
+        <label>Set No Specials Message</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>specialsSummary</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>There are no active move-in specials at this time. Please check back soon or ask about our standard pricing.</stringValue>
+            </value>
+        </assignmentItems>
     </assignments>
     <assignments>
         <name>Fault_SetError</name>
@@ -39,39 +158,111 @@
         </assignmentItems>
     </assignments>
     <decisions>
-        <name>Decision_UnderLimit</name>
-        <label>Under Requested Limit?</label>
+        <name>Decision_IsCurrentOrUpcoming</name>
+        <label>Is Current or Upcoming?</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <defaultConnector>
             <targetReference>Loop_Specials</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>Limit Reached</defaultConnectorLabel>
+        <defaultConnectorLabel>Past Period</defaultConnectorLabel>
         <rules>
-            <name>WithinLimit</name>
-            <conditionLogic>or</conditionLogic>
+            <name>CurrentOrUpcoming</name>
+            <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>inputMaxResults</leftValueReference>
-                <operator>IsNull</operator>
+                <leftValueReference>formulaSpecialPeriodNum</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>outputCount</leftValueReference>
-                <operator>LessThan</operator>
-                <rightValue>
-                    <elementReference>inputMaxResults</elementReference>
+                    <elementReference>formulaCurrentPeriodNum</elementReference>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>Assignment_AddSpecial</targetReference>
             </connector>
-            <label>Within Limit</label>
+            <label>Current or Upcoming</label>
         </rules>
     </decisions>
-    <description>inputMaxResults is optional; when provided it caps the number of specials returned.</description>
+    <decisions>
+        <name>Decision_MatchesLocation</name>
+        <label>Matches Location Filter?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Loop_Specials</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Match</defaultConnectorLabel>
+        <rules>
+            <name>Matches</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>locationFilter</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varSpecialLocation.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>locationFilter</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>varSpecialLocation.City__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <elementReference>locationFilter</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Decision_IsCurrentOrUpcoming</targetReference>
+            </connector>
+            <label>Matches</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_Were_Specials_Found</name>
+        <label>Were Specials Found?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assignment_Set_No_Specials_Message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Specials Found</defaultConnectorLabel>
+        <rules>
+            <name>SpecialsFound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>specialsCount</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <label>Specials Found</label>
+        </rules>
+    </decisions>
+    <description>locationFilter is optional; when provided it matches against the special&apos;s Apt Location neighborhood name or city. &quot;Current or upcoming&quot; specials are those whose Month__c/Year__c has not yet passed relative to today (Move_in_Specials__c has no Active__c/Expiration_Date__c field).</description>
     <environments>Default</environments>
+    <formulas>
+        <name>formulaCurrentPeriodNum</name>
+        <dataType>Number</dataType>
+        <expression>YEAR(TODAY()) * 12 + MONTH(TODAY())</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>formulaSpecialMonthNum</name>
+        <dataType>Number</dataType>
+        <expression>CASE({!Loop_Specials.Month__c}, &quot;January&quot;,1, &quot;February&quot;,2, &quot;March&quot;,3, &quot;April&quot;,4, &quot;May&quot;,5, &quot;June&quot;,6, &quot;July&quot;,7, &quot;August&quot;,8, &quot;September&quot;,9, &quot;October&quot;,10, &quot;November&quot;,11, &quot;December&quot;,12, 0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>formulaSpecialPeriodNum</name>
+        <dataType>Number</dataType>
+        <expression>{!Loop_Specials.Year__c} * 12 + {!formulaSpecialMonthNum}</expression>
+        <scale>0</scale>
+    </formulas>
     <interviewLabel>PHP Get Move-In Specials {!$Flow.CurrentDateTime}</interviewLabel>
     <label>PHP Get Move-In Specials</label>
     <loops>
@@ -79,11 +270,14 @@
         <label>Loop Specials</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
-        <collectionReference>colAllSpecials</collectionReference>
+        <collectionReference>colSpecials</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Decision_UnderLimit</targetReference>
+            <targetReference>Get_Location_For_Special</targetReference>
         </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Decision_Were_Specials_Found</targetReference>
+        </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -105,8 +299,8 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Specials</name>
-        <label>Get Move-In Specials</label>
+        <name>Get_All_Specials</name>
+        <label>Get All Move-In Specials</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
@@ -117,21 +311,53 @@
             <targetReference>Fault_SetError</targetReference>
         </faultConnector>
         <object>Move_in_Specials__c</object>
-        <outputReference>colAllSpecials</outputReference>
+        <outputReference>colSpecials</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Apt_Location__c</queriedFields>
+        <queriedFields>Month__c</queriedFields>
+        <queriedFields>Year__c</queriedFields>
+        <queriedFields>Number_of_Bedrooms__c</queriedFields>
+        <queriedFields>Number_of_Months__c</queriedFields>
+        <queriedFields>Rent_Discount__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Location_For_Special</name>
+        <label>Get Location For Special</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Decision_MatchesLocation</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Fault_SetError</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Loop_Specials.Apt_Location__c</elementReference>
+            </value>
+        </filters>
+        <object>Apt_Location__c</object>
+        <outputReference>varSpecialLocation</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>Name</queriedFields>
+        <queriedFields>City__c</queriedFields>
+        <queriedFields>State__c</queriedFields>
     </recordLookups>
-    <runInMode>DefaultMode</runInMode>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Specials</targetReference>
+            <targetReference>Get_All_Specials</targetReference>
         </connector>
     </start>
     <status>Active</status>
     <variables>
-        <name>colAllSpecials</name>
+        <name>colSpecials</name>
         <dataType>SObject</dataType>
         <isCollection>true</isCollection>
         <isInput>false</isInput>
@@ -139,15 +365,21 @@
         <objectType>Move_in_Specials__c</objectType>
     </variables>
     <variables>
-        <name>inputMaxResults</name>
-        <dataType>Number</dataType>
+        <name>locationFilter</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>false</isOutput>
-        <scale>0</scale>
     </variables>
     <variables>
-        <name>outputCount</name>
+        <name>outputErrorMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>specialsCount</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -158,18 +390,18 @@
         </value>
     </variables>
     <variables>
-        <name>outputErrorMessage</name>
+        <name>specialsSummary</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>true</isOutput>
     </variables>
     <variables>
-        <name>outputSpecials</name>
+        <name>varSpecialLocation</name>
         <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
+        <isCollection>false</isCollection>
         <isInput>false</isInput>
-        <isOutput>true</isOutput>
-        <objectType>Move_in_Specials__c</objectType>
+        <isOutput>false</isOutput>
+        <objectType>Apt_Location__c</objectType>
     </variables>
 </Flow>
