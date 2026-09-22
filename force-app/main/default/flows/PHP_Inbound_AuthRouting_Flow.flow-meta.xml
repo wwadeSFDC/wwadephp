@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Open</accessType>
     <actionCalls>
         <name>Route_To_Ops_Agent</name>
         <label>Route To Ops Agent</label>
@@ -241,6 +242,9 @@
                 <booleanValue>true</booleanValue>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_3</targetReference>
+        </connector>
     </assignments>
     <assignments>
         <name>Fault_SetError</name>
@@ -261,6 +265,9 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </assignmentItems>
+        <connector>
+            <targetReference>END_ELEMENT_4</targetReference>
+        </connector>
     </assignments>
     <decisions>
         <name>Decision_RequestType</name>
@@ -288,6 +295,16 @@
         </rules>
     </decisions>
     <description>TODO (Phase 9-11): The Route Work action&apos;s actionName/actionType and full parameter set (service channel reference, fallback queue reference, Agentforce agent targeting) are NOT confirmed against this org&apos;s Omni-Channel configuration - Salesforce&apos;s own Omni engineering team could not supply a definitive schema at authoring time. The values below (actionName, actionType, serviceChannelDevName, fallbackQueueDevName) are best-effort placeholders and MUST be verified/corrected once a real Routing Configuration and Service Channels exist in this org, before this flow is activated. processType is RoutingFlow (label &quot;Omni-Channel Flow&quot;) - the acceptance criteria&apos;s literal &quot;OmniChannelFlow&quot; value does not exist as a valid Flow ProcessType picklist entry (confirmed via Tooling API describe against this org).</description>
+    <ends>
+        <name>END_ELEMENT_3</name>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+    </ends>
+    <ends>
+        <name>END_ELEMENT_4</name>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+    </ends>
     <environments>Default</environments>
     <interviewLabel>PHP Inbound Auth Routing {!$Flow.CurrentDateTime}</interviewLabel>
     <label>PHP Inbound Auth Routing</label>

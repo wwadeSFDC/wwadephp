@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Open</accessType>
     <actionCalls>
         <name>Generate_OTP</name>
         <label>Generate OTP</label>
@@ -83,6 +84,26 @@
         </assignmentItems>
     </assignments>
     <assignments>
+        <name>Assignment_OtpFailed</name>
+        <label>Set OTP Send Failed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>outputIsVerified</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>outputMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>varOtpMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
         <name>Assignment_Verified</name>
         <label>Set Verified Output</label>
         <locationX>0</locationX>
@@ -106,26 +127,6 @@
             <operator>Assign</operator>
             <value>
                 <stringValue>OTP sent</stringValue>
-            </value>
-        </assignmentItems>
-    </assignments>
-    <assignments>
-        <name>Assignment_OtpFailed</name>
-        <label>Set OTP Send Failed</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>outputIsVerified</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>outputMessage</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>varOtpMessage</elementReference>
             </value>
         </assignmentItems>
     </assignments>
@@ -175,31 +176,6 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Decision_OtpSent</name>
-        <label>OTP Sent Successfully?</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>Assignment_Verified</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>OTP Sent</defaultConnectorLabel>
-        <rules>
-            <name>OtpFailed</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>varOtpSuccess</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Assignment_OtpFailed</targetReference>
-            </connector>
-            <label>OTP Failed</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Decision_LeaseFound</name>
         <label>Active Lease Found?</label>
         <locationX>0</locationX>
@@ -222,6 +198,31 @@
                 <targetReference>Assignment_NoLease</targetReference>
             </connector>
             <label>No Lease Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_OtpSent</name>
+        <label>OTP Sent Successfully?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assignment_Verified</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>OTP Sent</defaultConnectorLabel>
+        <rules>
+            <name>OtpFailed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varOtpSuccess</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_OtpFailed</targetReference>
+            </connector>
+            <label>OTP Failed</label>
         </rules>
     </decisions>
     <description>Calls PHP_OTPService.execute with action=GENERATE (the Apex class exposes a single @InvocableMethod discriminated by an action field, since the platform allows only one InvocableMethod per class). outputDebugOtpCode surfaces the generated code for Capstone testing/debug only.</description>
@@ -377,11 +378,12 @@
         <objectType>Account</objectType>
     </variables>
     <variables>
-        <name>varOtpSuccess</name>
-        <dataType>Boolean</dataType>
+        <name>varApartment</name>
+        <dataType>SObject</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+        <objectType>Apartment__c</objectType>
     </variables>
     <variables>
         <name>varOtpMessage</name>
@@ -391,11 +393,10 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>varApartment</name>
-        <dataType>SObject</dataType>
+        <name>varOtpSuccess</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
-        <objectType>Apartment__c</objectType>
     </variables>
 </Flow>

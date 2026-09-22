@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accessType>Open</accessType>
     <apiVersion>65.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
@@ -255,7 +256,7 @@
         <queriedFields>PersonContactId</queriedFields>
         <queriedFields>IsPersonAccount</queriedFields>
     </recordLookups>
-    <runInMode>DefaultMode</runInMode>
+    <runInMode>SystemModeWithoutSharing</runInMode>
     <start>
         <locationX>0</locationX>
         <locationY>0</locationY>
