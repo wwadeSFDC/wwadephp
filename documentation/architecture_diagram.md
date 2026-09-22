@@ -47,13 +47,18 @@ flowchart TB
     Ops -->|draft renewal email| PromptTemplate["PHP_RenewalEmail_PromptTemplate"]
 
     subgraph DataCloud["Data Cloud"]
-        Stream["Data Stream<br/>Salesforce CRM Connector"]
-        DLO["Data Lake Object"]
-        DMO["Case DMO + Account DMO<br/>(unified via Identity Resolution)"]
-        CI["Calculated Insight<br/>e.g. Maintenance Case Trend by Property"]
+        Stream["Data Streams<br/>Case_Home + Apt_Location_c_Home<br/>(Salesforce CRM Connector)"]
+        DMOCase["ssot__Case__dlm<br/>(standard Case DMO)"]
+        DMOProp["Apt_Location_c_Home__dlm<br/>(custom Property DMO)"]
+        CI["Calculated Insight<br/>Open_Case_Count_by_Property"]
     end
 
-    Case -.ingest.-> Stream --> DLO --> DMO --> CI
+    Case -.ingest.-> Stream
+    Stream --> DMOCase
+    Stream --> DMOProp
+    DMOCase -->|"Property__c = Id__c"| DMOProp
+    DMOCase --> CI
+    DMOProp --> CI
     CI -.phase 2: surface to.-> Ops
 
     subgraph External["External System"]
@@ -74,7 +79,7 @@ flowchart TB
 
 3. **Grounded data — CRM.** Each topic is backed by real Salesforce data: `Apartment__c`/`Apt_Location__c` for availability, `Move_in_Specials__c` for promotions, `Case` for maintenance, `Lease_Payment__c` for rent status, `OTP_Session__c` for identity verification. Policy questions are grounded in the Resident Handbook via a retriever, not the model's own guesses.
 
-4. **Grounded data — Data Cloud.** `Case` data is streamed into Data Cloud through the standard Salesforce CRM connector, landing as a Data Lake Object and mapping to the Case DMO. That's the seed for a Calculated Insight — maintenance trend by property — which is phase 2 grounding for Ops Copilot's weekly review, sitting alongside the direct Flow-based queries it uses today. This is intentionally minimal: real ingestion and a real model, not yet a dependency for the live demo, so it can be extended without disrupting a working agent.
+4. **Grounded data — Data Cloud.** `Case` and `Apt_Location__c` are streamed into Data Cloud through the standard Salesforce CRM connector. Case maps to Data Cloud's standard `ssot__Case__dlm` DMO; the property location maps to a custom `Apt_Location_c_Home__dlm` DMO. A Calculated Insight — `Open_Case_Count_by_Property` — joins the two on `Property__c = Id__c`, filters to open cases, and aggregates a live open-case count per property. This is intentionally minimal: real ingestion and a real, working metric, not yet a dependency for the live demo, so it can be extended (e.g. surfaced into Ops Copilot's weekly review) without disrupting a working agent.
 
 5. **External system — SmartRent.** Tenant Concierge's door-unlock action doesn't talk to SmartRent directly. It calls a Named Credential (`PHP_SmartRent_NC`) backed by an External Credential (`PHP_SmartRent_EC`), invoked from `PHP_SmartRentService.cls` — so the integration secret never lives in the agent or the flow, and can be rotated or pointed at a different environment without touching agent logic.
 
