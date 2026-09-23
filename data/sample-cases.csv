@@ -1,0 +1,34 @@
+AccountId,Property__c,Subject,Description,Status,Priority,Type,Origin
+001VW00000afWqPYAU,a01VW00000afXMuYAM,Dripping kitchen faucet,Tenant reports the kitchen faucet has been dripping steadily for two days.,New,Low,Problem,Web
+001VW00000afWuQYAU,a01VW00000afXMuYAM,HVAC not cooling,Unit HVAC is running but not cooling the apartment below 78F despite thermostat set to 70F.,New,Medium,Problem,Phone
+001VW00000afWxqYAE,a01VW00000afXMuYAM,Refrigerator not cooling properly,Tenant reports refrigerator compartment is running warm; food has started to spoil.,Escalated,High,Problem,Phone
+001VW00000afWqxYAE,a01VW00000afXN1YAM,Stuck kitchen drawer,Bottom kitchen drawer has come off its track and will not slide.,Closed,Low,Problem,Web
+001VW00000afWtuYAE,a01VW00000afXN1YAM,Keyfob not working at building entrance,Tenant's keyfob no longer grants access at the main lobby door; works fine at the parking garage.,New,Medium,Problem,Web
+001VW00000afWznYAE,a01VW00000afXN1YAM,Noise complaint - upstairs unit,"Tenant reports repeated late-night noise from the unit directly above, occurring most nights this week.",On Hold,Medium,Question,Email
+001VW00000afWsbYAE,a01VW00000afXN4YAM,Water leak under bathroom sink,Active water leak under the bathroom sink cabinet; tenant has placed a bucket but water is pooling on the floor.,Escalated,High,Problem,Phone
+001VW00000afWuFYAU,a01VW00000afXN4YAM,Dishwasher not draining,Dishwasher completes a cycle but standing water remains in the bottom of the unit afterward.,New,Medium,Problem,Web
+001VW00000afWzqYAE,a01VW00000afXN4YAM,Smoke detector chirping,"Smoke detector in the hallway has been chirping intermittently for several days, likely a low battery.",Closed,Low,Problem,Web
+001VW00000afWvJYAU,a01VW00000afXN7YAM,Garbage disposal jammed,Garbage disposal hums but does not spin; tenant has not attempted to clear it themselves.,New,Low,Problem,Phone
+001VW00000afWtxYAE,a01VW00000afXN7YAM,No heat in unit,Tenant reports no heat output overnight with outdoor temperatures near freezing.,Escalated,High,Problem,Phone
+001VW00000afWzhYAE,a01VW00000afXN7YAM,Toilet running continuously,Toilet in the primary bathroom continues to run after each flush and is not resetting.,On Hold,Medium,Problem,Web
+001VW00000afWs4YAE,a01VW00000afXNAYA2,Broken window latch,Bedroom window latch is broken and the window will not lock securely.,New,Medium,Problem,Web
+001VW00000afWtrYAE,a01VW00000afXNAYA2,Ants observed in kitchen,Tenant has noticed a small ant trail near the kitchen baseboard over the past few days.,New,Low,Problem,Email
+001VW00000afWztYAE,a01VW00000afXNAYA2,Mailbox lock stuck,Tenant's assigned mailbox lock is stuck and the key will not turn.,Closed,Low,Problem,Web
+001VW00000afWsAYAU,a01VW00000afXNDYA2,Ceiling light fixture flickering,Living room ceiling light flickers intermittently regardless of the bulb used.,New,Low,Problem,Web
+001VW00000afWuIYAU,a01VW00000afXNDYA2,Parking spot access question,Tenant is asking whether their assigned parking spot includes an EV charging outlet.,On Hold,Low,Question,Email
+001VW00000afWzwYAE,a01VW00000afXNDYA2,Gas smell reported near stove,Tenant reports a faint gas odor near the stove when the oven is in use.,Escalated,High,Problem,Phone
+001VW00000afWwfYAE,a01VW00000afXNHYA2,Dripping kitchen faucet,Tenant reports the kitchen faucet has been dripping steadily for two days.,New,Low,Problem,Web
+001VW00000afWslYAE,a01VW00000afXNHYA2,HVAC not cooling,Unit HVAC is running but not cooling the apartment below 78F despite thermostat set to 70F.,New,Medium,Problem,Phone
+001VW00000afX2VYAU,a01VW00000afXNHYA2,Refrigerator not cooling properly,Tenant reports refrigerator compartment is running warm; food has started to spoil.,Escalated,High,Problem,Phone
+001VW00000afWwiYAE,a01VW00000afXNKYA2,Stuck kitchen drawer,Bottom kitchen drawer has come off its track and will not slide.,Closed,Low,Problem,Web
+001VW00000afWsoYAE,a01VW00000afXNKYA2,Keyfob not working at building entrance,Tenant's keyfob no longer grants access at the main lobby door; works fine at the parking garage.,New,Medium,Problem,Web
+001VW00000afWyqYAE,a01VW00000afXNKYA2,Noise complaint - upstairs unit,"Tenant reports repeated late-night noise from the unit directly above, occurring most nights this week.",On Hold,Medium,Question,Email
+001VW00000afWwlYAE,a01VW00000afXNNYA2,Water leak under bathroom sink,Active water leak under the bathroom sink cabinet; tenant has placed a bucket but water is pooling on the floor.,Escalated,High,Problem,Phone
+001VW00000afWsrYAE,a01VW00000afXNNYA2,Dishwasher not draining,Dishwasher completes a cycle but standing water remains in the bottom of the unit afterward.,New,Medium,Problem,Web
+001VW00000afX0uYAE,a01VW00000afXNNYA2,Smoke detector chirping,"Smoke detector in the hallway has been chirping intermittently for several days, likely a low battery.",Closed,Low,Problem,Web
+001VW00000afWwoYAE,a01VW00000afXNQYA2,Garbage disposal jammed,Garbage disposal hums but does not spin; tenant has not attempted to clear it themselves.,New,Low,Problem,Phone
+001VW00000afWsuYAE,a01VW00000afXNQYA2,No heat in unit,Tenant reports no heat output overnight with outdoor temperatures near freezing.,Escalated,High,Problem,Phone
+001VW00000afX2SYAU,a01VW00000afXNQYA2,Toilet running continuously,Toilet in the primary bathroom continues to run after each flush and is not resetting.,On Hold,Medium,Problem,Web
+001VW00000afWtdYAE,a01VW00000afXNTYA2,Broken window latch,Bedroom window latch is broken and the window will not lock securely.,New,Medium,Problem,Web
+001VW00000afWsxYAE,a01VW00000afXNTYA2,Ants observed in kitchen,Tenant has noticed a small ant trail near the kitchen baseboard over the past few days.,New,Low,Problem,Email
+001VW00000afX0xYAE,a01VW00000afXNTYA2,Mailbox lock stuck,Tenant's assigned mailbox lock is stuck and the key will not turn.,Closed,Low,Problem,Web
