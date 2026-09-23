@@ -186,7 +186,7 @@
         <name>Layout</name>
     </types>
     <types>
-        <members>*</members>
+        <members>PersonAccount.PersonAccount</members>
         <name>RecordType</name>
     </types>
 

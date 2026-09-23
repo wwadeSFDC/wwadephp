@@ -125,7 +125,7 @@
         <nameSegment>routeWork</nameSegment>
         <offset>0</offset>
     </actionCalls>
-    <apiVersion>65.0</apiVersion>
+    <apiVersion>68.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
         <name>Assignment_Success</name>

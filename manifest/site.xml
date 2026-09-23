@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
-        <name>ExperienceBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>Network</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>CustomSite</name>
+        <!-- Standard Person Account Fields -->
+        <members>Account.PersonMobilePhone</members>
+        <members>Account.PersonEmail</members>
+        <members>Account.PersonContactId</members>
+        <members>Account.LastName</members>
+        <!-- Custom Person Account Fields (use __pc instead of __c) -->
+        <!-- <members>Account.Medical_History__pc</members> -->
+        
+        <name>CustomField</name>
     </types>
     <version>65.0</version>
 </Package>
