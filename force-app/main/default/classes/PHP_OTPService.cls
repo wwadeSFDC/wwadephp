@@ -175,6 +175,14 @@ public with sharing class PHP_OTPService {
 
     private static void sendOTP(String mobilePhone, String code) {
         // Mock send for Capstone: SMS infrastructure is not wired up yet.
-        System.debug(LoggingLevel.INFO, 'Sending OTP ' + code + ' to ' + mobilePhone);
+        // Never log the code or full phone number - debug logs aren't a safe place for OTP secrets or PII.
+        System.debug(LoggingLevel.INFO, 'OTP generated for phone ending in ' + maskPhone(mobilePhone));
+    }
+
+    private static String maskPhone(String mobilePhone) {
+        if (String.isBlank(mobilePhone) || mobilePhone.length() < 4) {
+            return '****';
+        }
+        return '****' + mobilePhone.substring(mobilePhone.length() - 4);
     }
 }

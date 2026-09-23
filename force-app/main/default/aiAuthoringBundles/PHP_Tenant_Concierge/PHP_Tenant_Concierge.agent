@@ -298,11 +298,6 @@ subagent Tenant_Verification:
                     is_displayable: False
                     filter_from_agent: False
                     description: "outputAccountId"
-                outputDebugOtpCode: string
-                    label: "outputDebugOtpCode"
-                    is_displayable: True
-                    filter_from_agent: True
-                    description: "outputDebugOtpCode"
                 outputErrorMessage: string
                     label: "outputErrorMessage"
                     is_displayable: True
@@ -337,8 +332,8 @@ subagent Tenant_Verification:
             outputs:
                 code: string
                     label: "code"
-                    is_displayable: True
-                    filter_from_agent: False
+                    is_displayable: False
+                    filter_from_agent: True
                     description: "code"
                 isValid: boolean
                     label: "isValid"

@@ -29,10 +29,6 @@
         </inputParameters>
         <nameSegment>PHP_OTPService</nameSegment>
         <outputParameters>
-            <assignToReference>outputDebugOtpCode</assignToReference>
-            <name>code</name>
-        </outputParameters>
-        <outputParameters>
             <assignToReference>varOtpSuccess</assignToReference>
             <name>success</name>
         </outputParameters>
@@ -225,7 +221,7 @@
             <label>OTP Failed</label>
         </rules>
     </decisions>
-    <description>Calls PHP_OTPService.execute with action=GENERATE (the Apex class exposes a single @InvocableMethod discriminated by an action field, since the platform allows only one InvocableMethod per class). outputDebugOtpCode surfaces the generated code for Capstone testing/debug only.</description>
+    <description>Calls PHP_OTPService.execute with action=GENERATE (the Apex class exposes a single @InvocableMethod discriminated by an action field, since the platform allows only one InvocableMethod per class). The generated code is never surfaced on this flow's outputs - it isn't safe in the agent's context or session trace; query the Private OTP_Session__c record directly if you need to inspect a code while testing.</description>
     <environments>Default</environments>
     <interviewLabel>PHP Verify Active Tenant {!$Flow.CurrentDateTime}</interviewLabel>
     <label>PHP Verify Active Tenant</label>
@@ -333,13 +329,6 @@
     </variables>
     <variables>
         <name>outputAccountId</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>true</isOutput>
-    </variables>
-    <variables>
-        <name>outputDebugOtpCode</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
