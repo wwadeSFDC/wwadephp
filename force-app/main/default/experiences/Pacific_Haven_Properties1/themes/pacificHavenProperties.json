@@ -116,22 +116,6 @@
       "regionName" : "customRegion",
       "type" : "region"
     }, {
-      "components" : [ {
-        "componentAttributes" : {
-          "clientVersion" : "WebV2",
-          "deploymentName" : "PHP_Tenant_Chat",
-          "hideChatButtonOnLoad" : "Visible",
-          "isExpSiteAuthMode" : false,
-          "mobileDeploymentName" : "",
-          "scrtUrl" : "https://orgfarm-01ac5780bc.test1.my.pc-rnd.salesforce-scrt.com",
-          "siteEndpoint" : "https://orgfarm-01ac5780bc.test1.my.pc-rnd.site.com/ESWPHPTenantCha1789557946750",
-          "snippetSettingsFile" : ""
-        },
-        "componentName" : "experience_messaging:embeddedMessaging",
-        "id" : "756ee96d-2ab1-4b4c-bfe5-d445198da8dc",
-        "renditionMap" : { },
-        "type" : "component"
-      } ],
       "id" : "548a0028-bd64-4c51-87d2-aabf0ab6bc99",
       "regionName" : "footer",
       "type" : "region"

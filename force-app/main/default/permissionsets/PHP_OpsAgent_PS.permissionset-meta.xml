@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <agentAccesses>
+        <agentName>PHP_OpsCopilot</agentName>
+        <enabled>true</enabled>
+    </agentAccesses>
     <fieldPermissions>
         <editable>false</editable>
         <field>Account.External_Account__c</field>
@@ -88,6 +92,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.Property__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.State__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

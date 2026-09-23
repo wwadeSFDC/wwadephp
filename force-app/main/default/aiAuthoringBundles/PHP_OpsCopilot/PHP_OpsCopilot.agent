@@ -116,7 +116,7 @@ variables:
 knowledge:
     rag_feature_config_id: "ARFPC_1JDVW000001SKOD4A4"
     citations_url: ""
-    citations_enabled: False
+    citations_enabled: True
 
 start_agent agent_router:
     label: "Agent Router"

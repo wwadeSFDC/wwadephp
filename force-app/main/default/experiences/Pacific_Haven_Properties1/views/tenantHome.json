@@ -41,14 +41,14 @@
         }, {
           "componentAttributes" : {
             "icon1" : "🧾",
-            "title1" : "Rent & Payments",
-            "text1" : "View your balance and payment history",
             "icon2" : "🔧",
-            "title2" : "24/7 Maintenance Support",
-            "text2" : "Submit and track maintenance requests",
             "icon3" : "💬",
-            "title3" : "Message Your Leasing Team",
-            "text3" : "Get fast answers from your on-site team"
+            "text1" : "View your balance and payment history",
+            "text2" : "Submit and track maintenance requests",
+            "text3" : "Get fast answers from your on-site team",
+            "title1" : "Rent & Payments",
+            "title2" : "24/7 Maintenance Support",
+            "title3" : "Message Your Leasing Team"
           },
           "componentName" : "c:phpFeatureStrip",
           "id" : "31e60181-1264-4dc0-9366-5e3f13511f37",

@@ -39,13 +39,6 @@
             <assignToReference>specialsSummary</assignToReference>
             <operator>Add</operator>
             <value>
-                <elementReference>varSpecialLocation.State__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>specialsSummary</assignToReference>
-            <operator>Add</operator>
-            <value>
                 <stringValue>) — Move in </stringValue>
             </value>
         </assignmentItems>
@@ -54,13 +47,6 @@
             <operator>Add</operator>
             <value>
                 <elementReference>Loop_Specials.Month__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>specialsSummary</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <stringValue> </stringValue>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -308,6 +294,7 @@
             <targetReference>Loop_Specials</targetReference>
         </connector>
         <faultConnector>
+            <isGoTo>true</isGoTo>
             <targetReference>Fault_SetError</targetReference>
         </faultConnector>
         <object>Move_in_Specials__c</object>

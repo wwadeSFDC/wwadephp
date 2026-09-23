@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <accessType>Open</accessType>
     <actionCalls>
         <name>Generate_OTP</name>
         <label>Generate OTP</label>
@@ -221,7 +220,7 @@
             <label>OTP Failed</label>
         </rules>
     </decisions>
-    <description>Calls PHP_OTPService.execute with action=GENERATE (the Apex class exposes a single @InvocableMethod discriminated by an action field, since the platform allows only one InvocableMethod per class). The generated code is never surfaced on this flow's outputs - it isn't safe in the agent's context or session trace; query the Private OTP_Session__c record directly if you need to inspect a code while testing.</description>
+    <description>Calls PHP_OTPService.execute with action=GENERATE (the Apex class exposes a single @InvocableMethod discriminated by an action field, since the platform allows only one InvocableMethod per class). The generated code is never surfaced on this flow&apos;s outputs - it isn&apos;t safe in the agent&apos;s context or session trace; query the Private OTP_Session__c record directly if you need to inspect a code while testing.</description>
     <environments>Default</environments>
     <interviewLabel>PHP Verify Active Tenant {!$Flow.CurrentDateTime}</interviewLabel>
     <label>PHP Verify Active Tenant</label>

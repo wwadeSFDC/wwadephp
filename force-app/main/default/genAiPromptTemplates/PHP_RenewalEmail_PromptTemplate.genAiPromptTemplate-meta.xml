@@ -3,7 +3,6 @@
     <activeVersionIdentifier>PMHGWmJpEwLykbDgIhfkAToHBXqavnWuf79lHH6QE5U=_2</activeVersionIdentifier>
     <developerName>PHP_RenewalEmail_PromptTemplate</developerName>
     <masterLabel>PHP Renewal Email Prompt Template</masterLabel>
-    <overridable>false</overridable>
     <templateVersions>
         <content>You are a friendly and professional leasing assistant for {!$Input:PropertyName}, a residential property managed by Pacific Haven Properties.
 
@@ -55,7 +54,6 @@ Guidelines:
             <referenceName>Input:RenewalOfferDetails</referenceName>
             <required>true</required>
         </inputs>
-        <isCitationEnabled>false</isCitationEnabled>
         <primaryModel>sfdc_ai__DefaultGPT4Omni</primaryModel>
         <status>Published</status>
         <versionIdentifier>J+kCLk1/Yu30dGoR+zRc/iedkz4jIpv42Ijwco01pLE=_1</versionIdentifier>
@@ -76,7 +74,6 @@ Guidelines:
 - Close with a warm, professional sign-off on behalf of the Pacific Haven Properties Leasing Team
 - Keep the tone friendly but professional
 - Do not invent any details not provided above</content>
-        <fileDroppingStrategy>{&quot;dropFilesBy&quot;:&quot;LAST_MODIFIED_DATE&quot;,&quot;dropFileStartingWith&quot;:&quot;OLDEST&quot;}</fileDroppingStrategy>
         <inputs>
             <apiName>TenantName</apiName>
             <definition>primitive://String</definition>
@@ -112,10 +109,8 @@ Guidelines:
             <referenceName>Input:RenewalOfferDetails</referenceName>
             <required>true</required>
         </inputs>
-        <isCitationEnabled>false</isCitationEnabled>
         <primaryModel>sfdc_ai__DefaultGPT5Mini</primaryModel>
         <status>Published</status>
-        <templateFormat>FormulaExpression</templateFormat>
         <versionIdentifier>PMHGWmJpEwLykbDgIhfkAToHBXqavnWuf79lHH6QE5U=_2</versionIdentifier>
     </templateVersions>
     <type>einstein_gpt__flex</type>

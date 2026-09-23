@@ -4,13 +4,14 @@
         <fullName>Escalated_Cases_to_Maintenance_Escalation_Manager</fullName>
         <accessLevel>Edit</accessLevel>
         <label>Escalated Cases to Maintenance Escalation Manager</label>
+        <sharedTo>
+            <role>Maintenance_Escalation_Manager</role>
+        </sharedTo>
         <criteriaItems>
             <field>Status</field>
             <operation>equals</operation>
             <value>Escalated</value>
         </criteriaItems>
-        <sharedTo>
-            <role>Maintenance_Escalation_Manager</role>
-        </sharedTo>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
 </SharingRules>

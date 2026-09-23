@@ -4,5 +4,6 @@
     <contactAccessLevel>Edit</contactAccessLevel>
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>Property Manager - Portfolio A</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
     <parentRole>VP_Operations</parentRole>
 </Role>

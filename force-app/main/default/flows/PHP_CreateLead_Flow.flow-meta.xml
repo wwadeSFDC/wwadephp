@@ -83,6 +83,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>inputSummary</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Email</field>
             <value>
                 <elementReference>inputEmail</elementReference>
@@ -175,6 +181,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>inputSummary</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>outputErrorMessage</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -197,5 +210,12 @@
         <value>
             <booleanValue>false</booleanValue>
         </value>
+    </variables>
+    <variables>
+        <name>outputSummary</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
     </variables>
 </Flow>

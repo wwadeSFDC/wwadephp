@@ -95,31 +95,6 @@
         </assignmentItems>
     </assignments>
     <decisions>
-        <name>Decision_IsOccupied</name>
-        <label>Is Occupied?</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>Assignment_IncrementVacant</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Vacant</defaultConnectorLabel>
-        <rules>
-            <name>Occupied</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Loop_Apartments.Occupied__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Assignment_IncrementOccupied</targetReference>
-            </connector>
-            <label>Occupied</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Decision_HasRecordId</name>
         <label>Has Record Id?</label>
         <locationX>0</locationX>
@@ -142,6 +117,31 @@
                 <targetReference>Get_Location_ById</targetReference>
             </connector>
             <label>Record Id Provided</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Decision_IsOccupied</name>
+        <label>Is Occupied?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Assignment_IncrementVacant</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Vacant</defaultConnectorLabel>
+        <rules>
+            <name>Occupied</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Loop_Apartments.Occupied__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assignment_IncrementOccupied</targetReference>
+            </connector>
+            <label>Occupied</label>
         </rules>
     </decisions>
     <decisions>

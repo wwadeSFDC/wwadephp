@@ -46,11 +46,6 @@
         <field>Apartment__c.Square_Footage__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Status</field>
-        <readable>true</readable>
-    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>PHP Ops Manager</label>
     <objectPermissions>
