@@ -121,8 +121,8 @@ variables:
 knowledge:
     rag_feature_config_id: "ARFPC_1JDVW000001SE2f4AG"
     citations_url: ""
-    citations_enabled: True
-
+    citations_enabled: False
+    
 start_agent agent_router:
     label: "Agent Router"
     description: "Welcome the user and determine the appropriate subagent based on user input"
